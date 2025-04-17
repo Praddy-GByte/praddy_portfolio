@@ -2120,60 +2120,23 @@ section {
     width: 200%;
     height: 200%;
     transform: translate(-50%, -50%) rotateX(60deg) rotateZ(45deg);
-    background: transparent;
-    animation: none;
+    background: 
+        linear-gradient(90deg, rgba(140, 29, 64, 0.1) 1px, transparent 1px),
+        linear-gradient(rgba(140, 29, 64, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
     transform-style: preserve-3d;
 }
 
-.grid-3d::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(45deg, rgba(255,255,255,0.1), transparent);
-    animation: shine 3s infinite;
-    transform: translateZ(50px);
-}
-
-@keyframes gridMove {
-    0% {
-        transform: translate(-50%, -50%) rotateX(60deg) rotateZ(45deg) translateY(0) translateZ(0);
-    }
-    50% {
-        transform: translate(-50%, -50%) rotateX(60deg) rotateZ(45deg) translateY(50px) translateZ(100px);
-    }
-    100% {
-        transform: translate(-50%, -50%) rotateX(60deg) rotateZ(45deg) translateY(0) translateZ(0);
-    }
-}
-
-@keyframes shine {
-    0% {
-        opacity: 0.5;
-        transform: translateX(-100%) translateZ(50px);
-    }
-    50% {
-        opacity: 0.8;
-        transform: translateX(0) translateZ(50px);
-    }
-    100% {
-        opacity: 0.5;
-        transform: translateX(100%) translateZ(50px);
-    }
-}
-
-/* Floating Elements */
 .floating-element {
     position: absolute;
     width: 20px;
     height: 20px;
-    background: transparent;
+    background: rgba(255, 198, 39, 0.3);
     border-radius: 50%;
-    animation: none;
+    animation: float 6s ease-in-out infinite;
     transform-style: preserve-3d;
-    box-shadow: none;
+    box-shadow: 0 0 20px rgba(255, 198, 39, 0.2);
 }
 
 .floating-element:nth-child(1) {
@@ -2204,6 +2167,18 @@ section {
     transform: translateZ(200px);
 }
 
+@keyframes gridMove {
+    0% {
+        transform: translate(-50%, -50%) rotateX(60deg) rotateZ(45deg) translateY(0) translateZ(0);
+    }
+    50% {
+        transform: translate(-50%, -50%) rotateX(60deg) rotateZ(45deg) translateY(50px) translateZ(100px);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotateX(60deg) rotateZ(45deg) translateY(0) translateZ(0);
+    }
+}
+
 @keyframes float {
     0%, 100% {
         transform: translateY(0) rotate(0deg) translateZ(50px);
@@ -2217,12 +2192,12 @@ section {
 .container {
     position: relative;
     z-index: 1;
-    backdrop-filter: none;
+    backdrop-filter: blur(5px);
 }
 
 /* Adjust section backgrounds */
 section {
-    background: transparent;
+    background: rgba(0, 0, 0, 0.7);
     position: relative;
     z-index: 1;
     padding: 100px 0;
