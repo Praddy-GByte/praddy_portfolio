@@ -23,6 +23,8 @@
     box-shadow: none !important;
     backdrop-filter: none !important;
     background: transparent !important;
+    animation: none !important;
+    transition: none !important;
 }
 
 body {
@@ -110,7 +112,6 @@ body::before {
     overflow: hidden;
     border: 4px solid #FFC627;
     box-shadow: 0 0 20px rgba(255, 198, 39, 0.3);
-    animation: lightChange 4s infinite, float 6s ease-in-out infinite;
     transform-style: preserve-3d;
 }
 
@@ -118,11 +119,11 @@ body::before {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.5s ease;
+    transition: transform 0.3s ease;
 }
 
 .profile-image:hover {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .hero-content {
@@ -154,15 +155,13 @@ body::before {
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    animation: gradientFlow 3s infinite, float 4s ease-in-out infinite;
-    text-shadow: 0 0 10px rgba(255, 198, 39, 0.5);
+    text-shadow: none;
 }
 
 .spax {
     display: inline-block;
     color: #FFC627;
-    animation: glowPulse 2s infinite, float 4s ease-in-out infinite 0.5s;
-    text-shadow: 0 0 10px rgba(255, 198, 39, 0.5);
+    text-shadow: none;
 }
 
 .hero-buttons {
