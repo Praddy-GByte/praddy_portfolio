@@ -282,26 +282,26 @@
             box-shadow: 0 0 20px rgba(255, 198, 39, 0.5), /* Gold glow */
                         0 0 40px rgba(255, 198, 39, 0.3),
                         0 0 60px rgba(255, 198, 39, 0.2);
-            animation: float 6s ease-in-out infinite;
+            animation: float 6s ease-in-out infinite, pulse 4s ease-in-out infinite;
             background: linear-gradient(135deg, #000000, #000000); /* Black gradient */
             padding: 3px; /* Space for the border */
         }
 
-        @keyframes float {
+        @keyframes pulse {
             0% {
-                transform: translateY(0px);
+                transform: scale(1);
                 box-shadow: 0 0 20px rgba(255, 198, 39, 0.5),
                             0 0 40px rgba(255, 198, 39, 0.3),
                             0 0 60px rgba(255, 198, 39, 0.2);
             }
             50% {
-                transform: translateY(-20px);
+                transform: scale(1.05);
                 box-shadow: 0 0 30px rgba(255, 198, 39, 0.6),
                             0 0 50px rgba(255, 198, 39, 0.4),
                             0 0 70px rgba(255, 198, 39, 0.3);
             }
             100% {
-                transform: translateY(0px);
+                transform: scale(1);
                 box-shadow: 0 0 20px rgba(255, 198, 39, 0.5),
                             0 0 40px rgba(255, 198, 39, 0.3),
                             0 0 60px rgba(255, 198, 39, 0.2);
@@ -356,13 +356,17 @@
             display: inline-block;
             animation: glow 2s ease-in-out infinite alternate;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+            font-size: 3.5rem;
         }
         
         .spax {
             color: var(--accent);
             font-style: italic;
-            animation: pulse 2s ease-in-out infinite;
+            animation: pulse 2s ease-in-out infinite, glow 2s ease-in-out infinite alternate;
             text-shadow: 0 0 10px rgba(0, 180, 216, 0.8);
+            font-size: 4.5rem;
+            display: inline-block;
+            transform-origin: center;
         }
 
         @keyframes glow {
@@ -375,21 +379,6 @@
                 text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
                            0 0 30px rgba(255, 255, 255, 0.6),
                            0 0 40px rgba(255, 255, 255, 0.4);
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                text-shadow: 0 0 10px rgba(0, 180, 216, 0.8);
-            }
-            50% {
-                transform: scale(1.05);
-                text-shadow: 0 0 20px rgba(0, 180, 216, 0.8);
-            }
-            100% {
-                transform: scale(1);
-                text-shadow: 0 0 10px rgba(0, 180, 216, 0.8);
             }
         }
 
@@ -671,22 +660,18 @@
             font-size: 1.3rem;
             font-weight: 500;
             position: relative;
-            padding-left: 25px;
+            padding-left: 0;
         }
 
         .reflection-text h4::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-size: 1.5rem;
+            display: none;
         }
         
         .reflection-text p {
             line-height: 1.8;
             color: var(--text-light);
             margin-bottom: 20px;
-            padding-left: 25px;
+            padding-left: 0;
             position: relative;
         }
         
@@ -1462,6 +1447,43 @@
                 margin-top: 20px;
             }
         }
+
+        .sticker-code {
+            position: absolute;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transform: rotate(-5deg);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+            background: linear-gradient(135deg, #2196F3, #1976D2);
+            color: white;
+        }
+
+        .sticker-code-1 {
+            top: 20px;
+            right: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .sticker-code-2 {
+            bottom: 20px;
+            left: 20px;
+            animation: float 3s ease-in-out infinite 1s;
+        }
+
+        .sticker-code-3 {
+            top: 50%;
+            right: 10px;
+            animation: float 3s ease-in-out infinite 2s;
+        }
+
+        .sticker-code-4 {
+            bottom: 30px;
+            right: 30px;
+            animation: float 3s ease-in-out infinite 1.5s;
+        }
     </style>
 </head>
 <body>
@@ -1491,6 +1513,10 @@
                 <div class="col-lg-4 text-center" data-aos="fade-right">
                     <div class="profile-image-container">
                         <img src="praddy_image.jpeg" alt="Dr. Pradeepika Kaushik" class="profile-image">
+                        <span class="sticker sticker-code sticker-code-1">HTML5</span>
+                        <span class="sticker sticker-code sticker-code-2">CSS3</span>
+                        <span class="sticker sticker-code sticker-code-3">JS</span>
+                        <span class="sticker sticker-code sticker-code-4">React</span>
                     </div>
                 </div>
                 <div class="col-lg-8" data-aos="fade-left">
@@ -1501,7 +1527,7 @@
                             <span class="name">PraddY</span><span class="spax">SpaX</span>
                         </h1>
                         <p class="text-white mb-4" style="font-size: 1.2rem; line-height: 1.6; max-width: 600px;">
-                            Geospatial & Visualization Scientist | Water Resource Specialist | AI Enthusiast
+                            Geospatial & Visualization Scientist | Software & Business Ops Developer | AI Enthusiast
                         </p>
                         <div class="hero-buttons">
                             <a href="Praddy_CV_24.pdf" class="btn btn-primary" download>
