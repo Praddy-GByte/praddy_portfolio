@@ -278,20 +278,33 @@
             margin: 0 auto;
             border-radius: 50%;
             overflow: hidden;
-            border: 5px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            border: 3px solid #FFC627; /* ASU Gold */
+            box-shadow: 0 0 20px rgba(255, 198, 39, 0.5), /* Gold glow */
+                        0 0 40px rgba(255, 198, 39, 0.3),
+                        0 0 60px rgba(255, 198, 39, 0.2);
             animation: float 6s ease-in-out infinite;
+            background: linear-gradient(135deg, #8C1D40, #000000); /* ASU Maroon to Black gradient */
+            padding: 3px; /* Space for the border */
         }
 
         @keyframes float {
             0% {
                 transform: translateY(0px);
+                box-shadow: 0 0 20px rgba(255, 198, 39, 0.5),
+                            0 0 40px rgba(255, 198, 39, 0.3),
+                            0 0 60px rgba(255, 198, 39, 0.2);
             }
             50% {
                 transform: translateY(-20px);
+                box-shadow: 0 0 30px rgba(255, 198, 39, 0.6),
+                            0 0 50px rgba(255, 198, 39, 0.4),
+                            0 0 70px rgba(255, 198, 39, 0.3);
             }
             100% {
                 transform: translateY(0px);
+                box-shadow: 0 0 20px rgba(255, 198, 39, 0.5),
+                            0 0 40px rgba(255, 198, 39, 0.3),
+                            0 0 60px rgba(255, 198, 39, 0.2);
             }
         }
         
@@ -300,6 +313,7 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
+            border-radius: 50%; /* Ensure the image is circular */
         }
         
         .profile-image-container:hover .profile-image {
@@ -1693,7 +1707,7 @@
     <!-- Documents Section -->
     <section id="documents" class="documents-section">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Professional Documents</h2>
+            <h2 class="section-title" data-aos="fade-up">Vision</h2>
             <div class="row">
                 <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="document-card">
