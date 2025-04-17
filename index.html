@@ -7,67 +7,204 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&family=Raleway:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #2c3e50;
-            --primary-dark: #1a252f;
-            --secondary: #e74c3c;
-            --accent: #3498db;
-            --text: #2c3e50;
-            --text-light: #7f8c8d;
-            --light: #ecf0f1;
-            --dark: #2c3e50;
+            --primary: #0066cc;
+            --primary-dark: #0052a3;
+            --secondary: #ff6b6b;
+            --dark: #1a1a2e;
+            --light: #f8f9fa;
+            --accent: #00b4d8;
+            --text: #333333;
+            --text-light: #6c757d;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Poppins', sans-serif;
+            --font-accent: 'Raleway', sans-serif;
+            --font-serif: 'Playfair Display', serif;
         }
         
         body {
-            font-family: 'Poppins', sans-serif;
+            font-family: var(--font-body);
             color: var(--text);
             background-color: var(--light);
             overflow-x: hidden;
-            position: relative;
-        }
-
-        /* 3D Background Animation */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            background: linear-gradient(45deg, #f3f4f6, #e5e7eb);
-            overflow: hidden;
-        }
-
-        .bg-animation::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
-            opacity: 0.1;
-            animation: gradientBG 15s ease infinite;
-        }
-
-        @keyframes gradientBG {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
+            line-height: 1.7;
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            letter-spacing: -0.02em;
+            line-height: 1.3;
+        }
+        
+        .hero-title {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            letter-spacing: -0.03em;
+            line-height: 1.2;
+        }
+        
+        .section-title {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            letter-spacing: -0.02em;
+            text-transform: uppercase;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+        
+        .nav-link {
+            font-family: var(--font-accent);
             font-weight: 600;
-            text-align: center;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+        }
+        
+        .about-description, .project-description, .contact-card p {
+            font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+        
+        .stat-number {
+            font-family: var(--font-heading);
+            font-weight: 800;
+            font-size: 3rem;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-label {
+            font-family: var(--font-accent);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+        }
+        
+        .btn {
+            font-family: var(--font-accent);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            padding: 12px 30px;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border: none;
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.2);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 102, 204, 0.3);
+        }
+        
+        .project-card h3 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
             color: var(--dark);
         }
         
+        .feature {
+            font-family: var(--font-accent);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-size: 0.85rem;
+        }
+        
+        .project-tags span {
+            font-family: var(--font-accent);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            font-size: 0.8rem;
+        }
+        
+        .timeline-content h3 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .timeline-content h4 {
+            font-family: var(--font-accent);
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: var(--primary);
+        }
+        
+        .publication-card h3 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+        }
+        
+        .publication-card li {
+            font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+        
+        .contact-card h3 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .contact-card p {
+            font-family: var(--font-body);
+            font-weight: 400;
+            line-height: 1.8;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .footer p {
+            font-family: var(--font-accent);
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .footer-links a {
+            font-family: var(--font-accent);
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
         .navbar {
-            background-color: rgba(255, 255, 255, 0.95) !important;
-            backdrop-filter: blur(10px);
+            background-color: var(--dark) !important;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             padding: 15px 0;
             transition: all 0.3s ease;
@@ -79,7 +216,7 @@
         }
         
         .navbar-brand, .nav-link {
-            color: var(--dark) !important;
+            color: white !important;
             font-weight: 500;
         }
         
@@ -104,35 +241,28 @@
         }
         
         section {
-            padding: 100px 0;
+            padding: 80px 0;
             position: relative;
-        }
-        
-        .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
-            text-align: center;
-            color: var(--dark);
-            position: relative;
-        }
-        
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--accent), var(--secondary));
-            margin: 15px auto;
-            border-radius: 2px;
         }
         
         /* Hero Section */
         .hero-section {
-            background-color: transparent;
-            color: var(--dark);
+            background: linear-gradient(135deg, var(--dark), #16213e);
+            color: white;
             padding: 150px 0 100px;
             position: relative;
             overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.6;
         }
         
         .profile-image-container {
@@ -143,11 +273,17 @@
             border-radius: 50%;
             overflow: hidden;
             border: 5px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .profile-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
             transition: transform 0.5s ease;
         }
         
-        .profile-image-container:hover {
+        .profile-image-container:hover .profile-image {
             transform: scale(1.05);
         }
         
@@ -160,7 +296,34 @@
             font-weight: 700;
             margin-bottom: 30px;
             line-height: 1.2;
-            text-align: left;
+        }
+        
+        .greeting {
+            display: block;
+            font-size: 1.5rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
+        }
+        
+        .welcome {
+            display: block;
+            font-size: 1.8rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .name {
+            color: white;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .spax {
+            color: var(--accent);
+            font-style: italic;
         }
         
         .hero-buttons {
@@ -180,60 +343,502 @@
         }
         
         .btn-primary {
-            background-color: var(--accent);
-            border-color: var(--accent);
-            color: white;
+            background-color: var(--primary);
+            border-color: var(--primary);
         }
         
         .btn-primary:hover {
-            background-color: var(--secondary);
-            border-color: var(--secondary);
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
         .btn-outline {
             background-color: transparent;
-            border: 2px solid var(--dark);
-            color: var(--dark);
+            border: 2px solid white;
+            color: white;
         }
         
         .btn-outline:hover {
-            background-color: var(--dark);
-            color: white;
+            background-color: rgba(255, 255, 255, 0.1);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
-
-        /* Project Cards */
+        
+        /* About Section */
+        .about-section {
+            background-color: white;
+            position: relative;
+        }
+        
+        .about-content {
+            padding-right: 30px;
+        }
+        
+        .about-title {
+            font-size: 2.2rem;
+            margin-bottom: 25px;
+            color: var(--dark);
+        }
+        
+        .about-description {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+            color: var(--text-light);
+        }
+        
+        .stats-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .stat-item {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 1rem;
+            color: var(--text-light);
+        }
+        
+        /* Reflection & Goals Section */
+        .reflection-section {
+            background-color: #f8f9fa;
+        }
+        
+        .reflection-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        
+        .reflection-card, .goals-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .reflection-card:hover, .goals-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .reflection-card h3, .goals-card h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .reflection-card h3::after, .goals-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .reflection-text h4 {
+            color: var(--dark);
+            margin: 20px 0 10px;
+            font-size: 1.2rem;
+        }
+        
+        .reflection-text p {
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+        
+        .goal-item {
+            margin-bottom: 25px;
+        }
+        
+        .goal-item h4 {
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .goal-item p {
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+        
+        /* Documents Section */
+        .documents-section {
+            background-color: white;
+        }
+        
+        .document-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        
+        .document-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .document-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .document-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+        
+        .document-card p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        /* Skills Section */
+        .skills-section {
+            background-color: #f8f9fa;
+        }
+        
+        .skill-category {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .skill-category h3 {
+            font-size: 1.3rem;
+            margin-bottom: 25px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .skill-category h3 i {
+            color: var(--primary);
+        }
+        
+        .skill-item {
+            margin-bottom: 20px;
+        }
+        
+        .skill-item span {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--text);
+        }
+        
+        .progress {
+            height: 8px;
+            background-color: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .progress-bar {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        /* Experience Section */
+        .experience-section {
+            background-color: white;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            top: 30px;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-item:nth-child(odd)::after {
+            right: -12px;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -12px;
+        }
+        
+        .timeline-content {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            position: relative;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .timeline-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .company-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-bottom: 20px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .company-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .timeline-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+            color: var(--dark);
+        }
+        
+        .timeline-content h4 {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+        
+        .date {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: rgba(0, 102, 204, 0.1);
+            color: var(--primary);
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+        
+        .timeline-content ul {
+            padding-left: 20px;
+        }
+        
+        .timeline-content li {
+            margin-bottom: 8px;
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+        
+        /* Publications Section */
+        .publications-section {
+            background-color: #f8f9fa;
+        }
+        
+        .publication-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .publication-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .publication-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+            color: var(--dark);
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .publication-card h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 40px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .publication-card ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        
+        .publication-card li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+            line-height: 1.6;
+            color: var(--text-light);
+        }
+        
+        .publication-card li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+        
+        /* Projects Section */
+        .projects-section {
+            background-color: white;
+        }
+        
+        .featured-project {
+            margin-bottom: 60px;
+        }
+        
         .project-card {
             background-color: white;
-            border-radius: 15px;
+            border-radius: 10px;
             overflow: hidden;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             height: 100%;
-            position: relative;
+        }
+        
+        .project-card.featured {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
         .project-card:hover {
             transform: translateY(-10px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
         
-        .project-icon {
-            font-size: 3rem;
-            color: var(--accent);
-            margin-bottom: 20px;
-            text-align: center;
-            display: block;
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .project-card:hover .project-image {
+            transform: scale(1.05);
+        }
+        
+        .project-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 102, 204, 0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .project-card:hover .project-overlay {
+            opacity: 1;
+        }
+        
+        .project-preview {
+            color: white;
+            font-size: 1.2rem;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .project-preview:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+            text-decoration: none;
+            color: white;
         }
         
         .project-content {
-            padding: 30px;
+            padding: 25px;
         }
         
-        .project-content h3 {
+        .project-card h3 {
             font-size: 1.4rem;
             margin-bottom: 15px;
             color: var(--dark);
@@ -245,6 +850,28 @@
             line-height: 1.6;
         }
         
+        .project-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .feature {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background-color: rgba(0, 180, 216, 0.1);
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text);
+        }
+        
+        .feature i {
+            color: var(--accent);
+        }
+        
         .project-tags {
             display: flex;
             flex-wrap: wrap;
@@ -253,35 +880,380 @@
         }
         
         .project-tags span {
-            background-color: rgba(52, 152, 219, 0.1);
-            color: var(--accent);
+            background-color: rgba(0, 102, 204, 0.1);
+            color: var(--primary);
             padding: 5px 12px;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 500;
         }
         
+        .project-links {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .project-link:not(.github) {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .project-link.github {
+            background-color: #333;
+            color: white;
+        }
+        
+        .project-link:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            text-decoration: none;
+        }
+        
+        .project-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .stat-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-card i {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .stat-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        
+        .stat-card p {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0;
+        }
+        
+        .project-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+            justify-content: center;
+        }
+        
+        .category-tab {
+            padding: 8px 20px;
+            border-radius: 30px;
+            background-color: white;
+            border: 1px solid #e9ecef;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .category-tab.active {
+            background-color: var(--primary);
+            color: white;
+            border-color: var(--primary);
+        }
+        
+        .category-tab:hover:not(.active) {
+            background-color: #f8f9fa;
+        }
+        
+        /* GitHub Projects Section */
+        .github-projects-section {
+            background-color: #f8f9fa;
+        }
+        
+        .github-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+        }
+        
+        .github-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .github-header {
+            background-color: var(--dark);
+            color: white;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .github-header i {
+            font-size: 2rem;
+        }
+        
+        .github-header h3 {
+            margin-bottom: 0;
+            font-size: 1.3rem;
+        }
+        
+        .github-content {
+            padding: 25px;
+        }
+        
+        .github-content p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .github-stats {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        
+        .github-stats span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+        
+        .github-stats i {
+            color: var(--primary);
+        }
+        
+        .github-link {
+            display: inline-block;
+            padding: 8px 20px;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .github-link:hover {
+            background-color: var(--primary-dark);
+            text-decoration: none;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Contact Section */
+        .contact-section {
+            background: linear-gradient(135deg, var(--dark), #16213e);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
+            opacity: 0.6;
+        }
+        
+        .contact-section .section-title {
+            color: white;
+        }
+        
+        .contact-section .section-title::after {
+            background: linear-gradient(90deg, var(--accent), white);
+        }
+        
+        .contact-options {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .contact-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        .contact-card i {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .contact-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: white;
+        }
+        
+        .contact-card p {
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .contact-form-container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-form-container h3 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            color: var(--dark);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-control {
+            border-radius: 30px;
+            padding: 12px 20px;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.25rem rgba(0, 102, 204, 0.25);
+        }
+        
+        /* Floating Contact Button */
+        .floating-contact {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+        }
+        
+        .contact-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .contact-btn:hover {
+            background-color: var(--primary-dark);
+            transform: scale(1.1);
+        }
+        
+        .contact-options-panel {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            background-color: white;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            transform: translateY(10px);
+        }
+        
+        .floating-contact:hover .contact-options-panel {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        
+        .contact-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            color: var(--text);
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+        
+        .contact-option:hover {
+            background-color: #f8f9fa;
+            text-decoration: none;
+            color: var(--primary);
+        }
+        
+        .contact-option i {
+            font-size: 1.2rem;
+            color: var(--primary);
+        }
+        
         /* Footer */
         .footer {
-            background-color: white;
-            color: var(--dark);
+            background-color: var(--dark);
+            color: white;
             padding: 30px 0;
-            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
         }
         
         .footer p {
             margin-bottom: 0;
-            color: var(--text-light);
+            color: rgba(255, 255, 255, 0.7);
         }
         
         .footer-links {
             display: flex;
-            justify-content: center;
+            justify-content: flex-end;
             gap: 20px;
         }
         
         .footer-links a {
-            color: var(--dark);
+            color: white;
             font-size: 1.2rem;
             transition: color 0.3s ease;
         }
@@ -290,38 +1262,39 @@
             color: var(--accent);
             text-decoration: none;
         }
-
-        /* Animations */
-        @keyframes float {
-            0% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-            100% { transform: translateY(0px); }
-        }
-
-        .floating {
-            animation: float 6s ease-in-out infinite;
-        }
-
+        
         /* Responsive Styles */
         @media (max-width: 992px) {
             .hero-title {
                 font-size: 3rem;
-                text-align: center;
             }
             
-            .hero-content {
-                padding-left: 0;
-                text-align: center;
+            .reflection-content {
+                grid-template-columns: 1fr;
             }
             
-            .hero-buttons {
-                justify-content: center;
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item::after {
+                left: 20px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
             }
         }
         
         @media (max-width: 768px) {
             section {
-                padding: 80px 0;
+                padding: 60px 0;
             }
             
             .hero-section {
@@ -334,13 +1307,28 @@
             
             .hero-buttons {
                 flex-direction: column;
-                align-items: center;
+            }
+            
+            .stats-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .section-title {
+                font-size: 2rem;
             }
         }
         
         @media (max-width: 576px) {
             .hero-title {
                 font-size: 2rem;
+            }
+            
+            .greeting {
+                font-size: 1.2rem;
+            }
+            
+            .welcome {
+                font-size: 1.4rem;
             }
             
             .profile-image-container {
@@ -351,10 +1339,8 @@
     </style>
 </head>
 <body>
-    <div class="bg-animation"></div>
-    
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Dr. Pradeepika Kaushik</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -377,7 +1363,7 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4 text-center" data-aos="fade-right">
-                    <div class="profile-image-container floating">
+                    <div class="profile-image-container">
                         <img src="praddy_image.jpeg" alt="Dr. Pradeepika Kaushik" class="profile-image">
                     </div>
                 </div>
@@ -385,10 +1371,10 @@
                     <div class="hero-content">
                         <h1 class="hero-title">
                             <span class="greeting">Hello there!</span>
-                            <span class="welcome">Welcome to</span>
+                            <span class="welcome">It's me</span>
                             <span class="name">PraddY</span><span class="spax">SpaX</span>
                         </h1>
-                        <p class="mb-4" style="font-size: 1.2rem; line-height: 1.6; max-width: 600px;">
+                        <p class="text-white mb-4" style="font-size: 1.2rem; line-height: 1.6; max-width: 600px;">
                             Geospatial & Visualization Scientist | Water Resource Specialist | AI Enthusiast
                         </p>
                         <div class="hero-buttons">
@@ -408,66 +1394,45 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
+    <!-- About Section -->
+    <section id="about" class="about-section">
         <div class="container">
-            <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
-            
+            <h2 class="section-title" data-aos="fade-up">About Me</h2>
             <div class="row">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-water"></i>
-                        </div>
-                        <div class="project-content">
-                            <h3>CRB Flow Dashboard</h3>
-                            <p class="project-description">Interactive Streamlit dashboard for real-time Colorado River Basin flow analysis with geospatial visualization.</p>
-                            <div class="project-tags">
-                                <span>Streamlit</span>
-                                <span>Python</span>
-                                <span>GIS</span>
-                            </div>
-                            <a href="https://pradioncrbflow.streamlit.app/" class="btn btn-primary" target="_blank">
-                                <i class="fas fa-external-link-alt"></i> View Project
-                            </a>
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-content">
+                        <h3 class="about-title">
+                            <span class="greeting">Hello there!</span>
+                            <span class="name">It's me PraddY<span class="spax">SpaX</span></span>
+                        </h3>
+                        <p class="about-description">A passionate Geospatial & Visualization Scientist with expertise in water resource management, remote sensing, and innovative data visualization techniques. Dedicated to transforming complex environmental data into actionable insights through cutting-edge technology and research.</p>
+                        <div class="mt-4">
+                            <h5>Education</h5>
+                            <ul class="list-unstyled">
+                                <li><strong>Ph.D. in Remote Sensing & GIS</strong> - Banasthali University</li>
+                                <li><strong>M.Tech in Remote Sensing</strong> - Banasthali University</li>
+                                <li><strong>B.Tech in Computer Science</strong> - Rajasthan Technical University</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-brain"></i>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-number">10+</span>
+                            <span class="stat-label">Years Experience</span>
                         </div>
-                        <div class="project-content">
-                            <h3>AI River Morphology Analyzer</h3>
-                            <p class="project-description">Python-based AI system for analyzing river morphology using machine learning techniques.</p>
-                            <div class="project-tags">
-                                <span>Python</span>
-                                <span>AI/ML</span>
-                                <span>Geospatial</span>
-                            </div>
-                            <a href="https://github.com/Praddy-GByte/AI_AnalyzerRiverMorphology" class="btn btn-primary" target="_blank">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Projects</span>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-map-marked-alt"></i>
+                        <div class="stat-item">
+                            <span class="stat-number">15+</span>
+                            <span class="stat-label">Publications</span>
                         </div>
-                        <div class="project-content">
-                            <h3>Flood Mapping System</h3>
-                            <p class="project-description">Automated flood mapping system using SAR and optical satellite data with change detection capabilities.</p>
-                            <div class="project-tags">
-                                <span>Python</span>
-                                <span>Remote Sensing</span>
-                                <span>GIS</span>
-                            </div>
-                            <a href="https://github.com/Praddy-GByte/flood_mapping" class="btn btn-primary" target="_blank">
-                                <i class="fab fa-github"></i> View Code
-                            </a>
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Programming Languages</span>
                         </div>
                     </div>
                 </div>
@@ -475,7 +1440,739 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Reflection & Goals Section -->
+    <section id="reflection" class="reflection-section">
+        <div class="container">
+            <h2 class="section-title">Reflection & Goals</h2>
+            
+            <div class="reflection-content">
+                <div class="reflection-card" data-aos="fade-right">
+                    <h3>Self-Reflection on My Performance This Year</h3>
+                    <div class="reflection-text">
+                        <h4>A Year of Learning and Growth</h4>
+                        <p>This year at ASU has been one of the most transformative times in my career. I've learned so much—technically, academically, and personally. Looking back at when I first joined, I can honestly say I feel proud of how far I've come.</p>
+                        
+                        <h4>Inspired by a Productive Environment</h4>
+                        <p>I feel incredibly fortunate to be part of a team where everyone is passionate and focused on their work. The energy here is contagious—it motivates me every day. My professor has been extremely supportive, and the overall environment helps me stay creative and driven.</p>
+                        
+                        <h4>Building My Own Ideas into Reality</h4>
+                        <p>I've started developing some of my own apps, including the AI River Analyzer Morphology Analyzer. It's exciting to see my ideas take shape and move closer to becoming real tools that others can use.</p>
+                        
+                        <h4>Gaining Confidence in My Path</h4>
+                        <p>This year gave me clarity. I now feel more confident in my skills, more sure of the kind of research I want to do, and excited about the tools I'm building. I'm really happy I chose this path—it's already making a difference.</p>
+                    </div>
+                </div>
+
+                <div class="goals-card" data-aos="fade-left">
+                    <h3>Career Goals Statement</h3>
+                    <div class="goals-text">
+                        <div class="goal-item">
+                            <h4>Research That Makes an Impact</h4>
+                            <p>I want to keep working at the intersection of geospatial science, AI, and environmental research. My goal is to create tools and insights that can actually help communities and researchers understand complex systems like rivers and climate.</p>
+                        </div>
+                        
+                        <div class="goal-item">
+                            <h4>Finish and Launch My Own Tools</h4>
+                            <p>I'm currently working on apps that are close to my heart—especially the River Analyzer. In the next phase of my journey, I want to polish and launch these tools so they can be used in real-world scenarios.</p>
+                        </div>
+                        
+                        <div class="goal-item">
+                            <h4>Write and Share What I'm Learning</h4>
+                            <p>I'm working on research papers that reflect the projects and challenges I've been tackling. Publishing these will help me contribute back to the research community and start meaningful conversations.</p>
+                        </div>
+                        
+                        <div class="goal-item">
+                            <h4>Keep Growing and Collaborating</h4>
+                            <p>Long-term, I want to lead and collaborate on interdisciplinary projects that combine science, tech, and design. I'm excited to keep learning, mentoring others, and building solutions that really matter.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Documents Section -->
+    <section id="documents" class="documents-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Professional Documents</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Curriculum Vitae</h3>
+                        <p>Up-to-date CV highlighting my professional journey, skills, and achievements (5 pages)</p>
+                        <a href="Praddy_CV_24.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Self-Reflection</h3>
+                        <p>Personal assessment of my performance and growth this year (1 page)</p>
+                        <a href="self_reflection.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i> Download Reflection
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Career Goals</h3>
+                        <p>Statement outlining my professional aspirations and future objectives (1 page)</p>
+                        <a href="career_goals.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i> Download Goals
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Technical Skills</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-code"></i> Web Development</h3>
+                        <div class="skill-item">
+                            <span>HTML5/CSS3</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>JavaScript/React</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Node.js/Express</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>WebSocket/Socket.io</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 80%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-map-marked-alt"></i> GIS & Data Analysis</h3>
+                        <div class="skill-item">
+                            <span>ArcGIS/PostGIS</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Python</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Remote Sensing</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Geospatial Analysis</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="skill-category">
+                        <h3><i class="fas fa-chart-line"></i> Business & Research</h3>
+                        <div class="skill-item">
+                            <span>Project Management</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 90%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Data Visualization</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Research Analysis</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 95%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>Technical Writing</span>
+                            <div class="progress">
+                                <div class="progress-bar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Professional Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/67/Arizona_State_University_seal.svg/1200px-Arizona_State_University_seal.svg.png" alt="Arizona State University" class="company-image">
+                        </div>
+                        <h3>Center for Hydrologic Innovations</h3>
+                        <h4>Geospatial and Visualization Scientist (Postdoc)</h4>
+                        <p class="date">2023 - Present</p>
+                        <ul>
+                            <li>Leading geospatial analysis for NASA-CAP-ASU Colorado River Management Project</li>
+                            <li>Developing innovative web-based visualization solutions for water resource management</li>
+                            <li>Implementing advanced geospatial data analysis techniques for hydrological studies</li>
+                            <li>Collaborating with multidisciplinary teams on water sustainability projects</li>
+                            <li>Presenting research findings at international conferences and workshops</li>
+                            <li>Mentoring graduate students in geospatial analysis techniques</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="https://planystech.com/wp-content/uploads/2022/03/Planys-Logo.png" alt="Planys Technologies" class="company-image">
+                        </div>
+                        <h3>Planys Technologies</h3>
+                        <h4>Specialist - Software Engineering & Business Operations</h4>
+                        <p class="date">2023</p>
+                        <ul>
+                            <li>Spearheaded the development of React applications and RESTful APIs for underwater inspection systems</li>
+                            <li>Implemented WebSocket and Socket.io for real-time communication in marine asset monitoring</li>
+                            <li>Managed business development and strategic partnerships in European markets</li>
+                            <li>Led research and analysis for grant and funding opportunities in marine technology</li>
+                            <li>Developed innovative solutions for 3D geospatial data visualization of underwater structures</li>
+                            <li>Coordinated cross-functional teams between engineering and business units</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-right">
+                    <div class="timeline-content">
+                        <div class="company-logo">
+                            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Banasthali_Vidyapith_Logo.svg/1200px-Banasthali_Vidyapith_Logo.svg.png" alt="Banasthali University" class="company-image">
+                        </div>
+                        <h3>GIS Specialist - Freelancer</h3>
+                        <p class="date">2020 - 2022</p>
+                        <ul>
+                            <li>Developed custom tools and procedures for geospatial data automation</li>
+                            <li>Created web applications for Public Works and Utilities projects with interactive mapping</li>
+                            <li>Managed geospatial databases and implemented GIS applications for various clients</li>
+                            <li>Designed custom datasets and maps tailored to specific business needs</li>
+                            <li>Provided training and technical support for GIS applications to end-users</li>
+                            <li>Conducted spatial analysis for environmental and urban planning projects</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="publications-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Publications & Research</h2>
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="publication-card">
+                        <h3>Journal Publications</h3>
+                        <ul>
+                            <li>Kaushik, P., et al. (2023). "Advanced Flood Mapping Techniques Using SAR and Optical Earth Observation Data." <em>International Journal of Remote Sensing</em></li>
+                            <li>Kaushik, P., et al. (2022). "Geomorphological Evolution of Chambal River Basin Using Multi-Temporal Satellite Data." <em>Geomorphology</em></li>
+                            <li>Kaushik, P., et al. (2021). "River Morphology and Channel Patterns Analysis Using Machine Learning Approaches." <em>Journal of Hydrology</em></li>
+                            <li>Kaushik, P., et al. (2020). "Remote Sensing Applications in Geological Mapping of Arid Regions." <em>Geoscience Frontiers</em></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="publication-card">
+                        <h3>Conference Presentations</h3>
+                        <ul>
+                            <li>"Innovative Visualization Techniques for Water Resource Management" - European Geoscience Union Conference (2024)</li>
+                            <li>"AI Applications in River Morphology Analysis" - Geological Society of America Annual Meeting (2023)</li>
+                            <li>"Multi-Sensor Approach to Flood Monitoring" - International Society of Photogrammetry and Remote Sensing (2022)</li>
+                            <li>"Geospatial Analysis of River Basin Dynamics" - Indian Society of Remote Sensing Conference (2021)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
+            
+            <!-- Featured Project - CRB Flow Dashboard -->
+            <div class="featured-project" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="project-card featured">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="CRB Flow Dashboard">
+                                <div class="project-overlay">
+                                    <a href="https://pradioncrbflow.streamlit.app/" target="_blank" class="project-preview">
+                                        <i class="fas fa-external-link-alt"></i> Live Demo
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>CRB Flow Dashboard</h3>
+                                <p class="project-description">An interactive Streamlit dashboard for real-time Colorado River Basin flow analysis. This project combines geospatial data visualization with advanced hydrological modeling to provide insights into water resource management.</p>
+                                <div class="project-features">
+                                    <div class="feature">
+                                        <i class="fas fa-chart-line"></i>
+                                        <span>Real-time Data Analysis</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                        <span>Interactive Maps</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-water"></i>
+                                        <span>Hydrological Modeling</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-database"></i>
+                                        <span>Geospatial Analysis</span>
+                                    </div>
+                                </div>
+                                <div class="project-tags">
+                                    <span>Streamlit</span>
+                                    <span>Python</span>
+                                    <span>Data Visualization</span>
+                                    <span>Geospatial Analysis</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://pradioncrbflow.streamlit.app/" class="project-link" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i> View Live Demo
+                                    </a>
+                                    <a href="https://github.com/Praddy-GByte/crb_dashboard" class="project-link github" target="_blank">
+                                        <i class="fab fa-github"></i> View Code
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="project-stats">
+                            <div class="stat-card">
+                                <i class="fas fa-users"></i>
+                                <h4>Active Users</h4>
+                                <p>100+</p>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-chart-bar"></i>
+                                <h4>Data Points</h4>
+                                <p>10,000+</p>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-map"></i>
+                                <h4>Coverage</h4>
+                                <p>Colorado River Basin</p>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-code-branch"></i>
+                                <h4>Contributors</h4>
+                                <p>5+</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project Categories Tabs -->
+            <div class="project-categories" data-aos="fade-up">
+                <button class="category-tab active" data-category="all">All Projects</button>
+                <button class="category-tab" data-category="web">Web Development</button>
+                <button class="category-tab" data-category="gis">GIS & Geospatial</button>
+                <button class="category-tab" data-category="data">Data Analysis</button>
+                <button class="category-tab" data-category="research">Research Projects</button>
+            </div>
+
+            <div class="projects-container">
+                <!-- Web Development Projects -->
+                <div class="project-category" data-category="web">
+                    <div class="row">
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Web Development Projects">
+                                </div>
+                                <div class="project-content">
+                                    <h3>Web Development Projects</h3>
+                                    <p>Collection of web applications including React, Node.js, and Socket.io implementations for various geospatial and data visualization needs.</p>
+                                    <div class="project-tags">
+                                        <span>React</span>
+                                        <span>Node.js</span>
+                                        <span>WebSocket</span>
+                                        <span>GIS</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte?tab=repositories" class="project-link" target="_blank">View Repositories</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Strapi Cloud Project">
+                                </div>
+                                <div class="project-content">
+                                    <h3>Strapi Cloud Project</h3>
+                                    <p>Headless CMS implementation with Strapi for content management in geospatial applications with custom API endpoints.</p>
+                                    <div class="project-tags">
+                                        <span>JavaScript</span>
+                                        <span>Strapi</span>
+                                        <span>CMS</span>
+                                        <span>API</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte/strapi-cloud" class="project-link" target="_blank">View Repository</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Socket.io Project">
+                                </div>
+                                <div class="project-content">
+                                    <h3>Socket.io Project</h3>
+                                    <p>Real-time communication implementation using Socket.io for live data streaming in environmental monitoring applications.</p>
+                                    <div class="project-tags">
+                                        <span>JavaScript</span>
+                                        <span>Socket.io</span>
+                                        <span>WebSocket</span>
+                                        <span>Real-time</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte/socket.io_project" class="project-link" target="_blank">View Repository</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GIS & Geospatial Projects -->
+                <div class="project-category" data-category="gis">
+                    <div class="row">
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a9e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Basin Analysis Tools">
+                                </div>
+                                <div class="project-content">
+                                    <h3>Basin Analysis Tools</h3>
+                                    <p>Geospatial analysis tools using ArcPy for basin and watershed analysis with automated workflow capabilities.</p>
+                                    <div class="project-tags">
+                                        <span>Python</span>
+                                        <span>ArcPy</span>
+                                        <span>GIS</span>
+                                        <span>Automation</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte/basin_analysis_arcpy" class="project-link" target="_blank">View Repository</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1569336416962-2a5b6f45b58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Geospatial Projects">
+                                </div>
+                                <div class="project-content">
+                                    <h3>Geospatial Projects</h3>
+                                    <p>Collection of geospatial analysis and visualization projects with interactive mapping components.</p>
+                                    <div class="project-tags">
+                                        <span>GIS</span>
+                                        <span>Remote Sensing</span>
+                                        <span>JavaScript</span>
+                                        <span>Mapping</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte/Geospatial_code" class="project-link" target="_blank">View Repository</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Flood Mapping System">
+                                </div>
+                                <div class="project-content">
+                                    <h3>Flood Mapping System</h3>
+                                    <p>Automated flood mapping system using SAR and optical satellite data with change detection capabilities.</p>
+                                    <div class="project-tags">
+                                        <span>Python</span>
+                                        <span>Remote Sensing</span>
+                                        <span>SAR</span>
+                                        <span>GIS</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte/flood_mapping" class="project-link" target="_blank">View Repository</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Analysis Projects -->
+                <div class="project-category" data-category="data">
+                    <div class="row">
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="R Projects">
+                                </div>
+                                <div class="project-content">
+                                    <h3>R Projects</h3>
+                                    <p>Data analysis and visualization projects using R for statistical analysis and scientific computing.</p>
+                                    <div class="project-tags">
+                                        <span>R</span>
+                                        <span>Data Analysis</span>
+                                        <span>Visualization</span>
+                                        <span>Statistics</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte?tab=repositories" class="project-link" target="_blank">View Repositories</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Python Data Analysis">
+                                </div>
+                                <div class="project-content">
+                                    <h3>Python Data Analysis</h3>
+                                    <p>Collection of Python scripts for geospatial and environmental data analysis and visualization.</p>
+                                    <div class="project-tags">
+                                        <span>Python</span>
+                                        <span>Pandas</span>
+                                        <span>Matplotlib</span>
+                                        <span>Data Science</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte/python_data_analysis" class="project-link" target="_blank">View Repository</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Projects -->
+                <div class="project-category" data-category="research">
+                    <div class="row">
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="AI River Morphology Analyzer">
+                                </div>
+                                <div class="project-content">
+                                    <h3>AI River Morphology Analyzer</h3>
+                                    <p>Python-based AI system for analyzing river morphology and patterns using machine learning techniques.</p>
+                                    <div class="project-tags">
+                                        <span>Python</span>
+                                        <span>AI/ML</span>
+                                        <span>Geospatial Analysis</span>
+                                        <span>Hydrology</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte/AI_AnalyzerRiverMorphology" class="project-link" target="_blank">View Repository</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="CHI Project">
+                                </div>
+                                <div class="project-content">
+                                    <h3>CHI Project</h3>
+                                    <p>R-based project for Center for Hydrologic Innovations research with advanced hydrological modeling.</p>
+                                    <div class="project-tags">
+                                        <span>R</span>
+                                        <span>Hydrology</span>
+                                        <span>Research</span>
+                                        <span>Modeling</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte/CHI_Project" class="project-link" target="_blank">View Repository</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="MaCRIA Project">
+                                </div>
+                                <div class="project-content">
+                                    <h3>MaCRIA Project</h3>
+                                    <p>R-based analysis and visualization tools for MaCRIA research on climate change impacts.</p>
+                                    <div class="project-tags">
+                                        <span>R</span>
+                                        <span>Data Analysis</span>
+                                        <span>Research</span>
+                                        <span>Climate</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte/R_MaCRIA" class="project-link" target="_blank">View Repository</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Projects Section -->
+    <section id="github-projects" class="github-projects-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">GitHub Projects</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="github-card">
+                        <div class="github-header">
+                            <i class="fab fa-github"></i>
+                            <h3>AI_AnalyzerRiverMorphology</h3>
+                        </div>
+                        <div class="github-content">
+                            <p>Python-based AI analyzer for river morphology studies using machine learning and computer vision techniques.</p>
+                            <div class="github-stats">
+                                <span><i class="fas fa-code"></i> Python</span>
+                                <span><i class="fas fa-star"></i> Latest Update: Apr 17, 2025</span>
+                            </div>
+                            <a href="https://github.com/Praddy-GByte/AI_AnalyzerRiverMorphology" class="github-link" target="_blank">View Repository</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="github-card">
+                        <div class="github-header">
+                            <i class="fab fa-github"></i>
+                            <h3>crb_dashboard</h3>
+                        </div>
+                        <div class="github-content">
+                            <p>Monitoring dashboard for Colorado River Basin analysis with interactive visualizations and real-time data.</p>
+                            <div class="github-stats">
+                                <span><i class="fas fa-code"></i> R</span>
+                                <span><i class="fas fa-star"></i> Latest Update: Apr 16, 2025</span>
+                            </div>
+                            <a href="https://github.com/Praddy-GByte/crb_dashboard" class="github-link" target="_blank">View Repository</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="github-card">
+                        <div class="github-header">
+                            <i class="fab fa-github"></i>
+                            <h3>basin_analysis_arcpy</h3>
+                        </div>
+                        <div class="github-content">
+                            <p>Geospatial analysis tools using ArcPy for basin and watershed analysis with automated workflows.</p>
+                            <div class="github-stats">
+                                <span><i class="fas fa-code"></i> Python</span>
+                                <span><i class="fas fa-star"></i> Latest Update: Jan 15, 2024</span>
+                            </div>
+                            <a href="https://github.com/Praddy-GByte/basin_analysis_arcpy" class="github-link" target="_blank">View Repository</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4">
+                <div class="col-12 text-center">
+                    <a href="https://github.com/Praddy-GByte" class="btn btn-primary" target="_blank">View All Repositories</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Let's Connect & Collaborate</h2>
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="contact-options">
+                        <div class="contact-card">
+                            <i class="fab fa-linkedin"></i>
+                            <h3>LinkedIn Chat</h3>
+                            <p>Connect with me on LinkedIn for professional discussions and collaborations about geospatial science, water resources, and data visualization.</p>
+                            <a href="https://www.linkedin.com/in/dr-pradeepika-kaushik/" class="btn btn-primary" target="_blank">
+                                <i class="fab fa-linkedin"></i> Start Chat
+                            </a>
+                        </div>
+                        <div class="contact-card">
+                            <i class="fas fa-envelope"></i>
+                            <h3>Email Me</h3>
+                            <p>Send me an email for detailed discussions about research opportunities, consulting, or speaking engagements.</p>
+                            <a href="mailto:pradeepika.kaushik@gmail.com" class="btn btn-outline">
+                                <i class="fas fa-envelope"></i> Send Email
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="contact-form-container">
+                        <h3>Quick Message</h3>
+                        <form id="contact-form">
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" class="form-control" placeholder="Subject" required>
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-paper-plane"></i> Send Message
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Floating Contact Button -->
+    <div class="floating-contact">
+        <button class="contact-btn">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="contact-options-panel">
+            <a href="https://www.linkedin.com/in/dr-pradeepika-kaushik/" target="_blank" class="contact-option">
+                <i class="fab fa-linkedin"></i>
+                <span>LinkedIn Chat</span>
+            </a>
+            <a href="mailto:pradeepika.kaushik@gmail.com" class="contact-option">
+                <i class="fas fa-envelope"></i>
+                <span>Email Me</span>
+            </a>
+        </div>
+    </div>
+
     <footer class="footer">
         <div class="container">
             <div class="row">
@@ -524,6 +2221,43 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Project category filtering
+        document.querySelectorAll('.category-tab').forEach(tab => {
+            tab.addEventListener('click', function() {
+                // Remove active class from all tabs
+                document.querySelectorAll('.category-tab').forEach(t => {
+                    t.classList.remove('active');
+                });
+                
+                // Add active class to clicked tab
+                this.classList.add('active');
+                
+                const category = this.getAttribute('data-category');
+                const projectCategories = document.querySelectorAll('.project-category');
+                
+                if (category === 'all') {
+                    projectCategories.forEach(pc => {
+                        pc.style.display = 'block';
+                    });
+                } else {
+                    projectCategories.forEach(pc => {
+                        if (pc.getAttribute('data-category') === category) {
+                            pc.style.display = 'block';
+                        } else {
+                            pc.style.display = 'none';
+                        }
+                    });
+                }
+            });
+        });
+
+        // Form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! I will get back to you soon.');
+            this.reset();
         });
     </script>
 </body>
