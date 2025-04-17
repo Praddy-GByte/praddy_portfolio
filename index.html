@@ -9,6 +9,13 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Temporary inline styles to ensure visibility */
+        body { background-color: white; }
+        .navbar { background-color: black !important; }
+        .navbar-brand, .nav-link { color: white !important; }
+        section { padding: 50px 0; }
+    </style>
 </head>
 <body>
     <!-- 3D Background Elements -->
@@ -25,7 +32,7 @@
     </div>
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
         <div class="container">
             <a class="navbar-brand" href="#">Dr. Pradeepika Kaushik</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -47,29 +54,39 @@
     <section id="hero" class="hero-section">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h1>Geospatial & Visualization Research</h1>
-                    <h2>Advancing Scientific Understanding Through Data</h2>
-                    <p class="lead">Specializing in geospatial analysis, remote sensing, and innovative visualization techniques. Currently contributing to NASA-CAP-ASU Colorado River Management Project, developing cutting-edge solutions for environmental challenges.</p>
-                    <div class="hero-buttons">
-                        <a href="#research" class="btn btn-primary">View Research</a>
-                        <a href="praddy_cv.pdf" class="btn btn-outline-light" download>Download CV</a>
+                <div class="col-lg-6">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Dr. Pradeepika Kaushik</h1>
+                        <h2 class="hero-subtitle">Geospatial & Visualization Scientist</h2>
+                        <p class="hero-description">Specializing in geospatial analysis, remote sensing, and innovative visualization techniques for water resource management.</p>
+                        <div class="hero-buttons">
+                            <a href="#research" class="btn btn-primary">
+                                <i class="fas fa-microscope"></i> View Research
+                            </a>
+                            <a href="Praddy_CV_24.pdf" class="btn btn-outline-dark" download>
+                                <i class="fas fa-download"></i> Download CV
+                            </a>
+                        </div>
+                        <div class="hero-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">10+</span>
+                                <span class="stat-label">Years Experience</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">50+</span>
+                                <span class="stat-label">Projects</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">15+</span>
+                                <span class="stat-label">Publications</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <div class="image-container">
-                        <img src="praddy_image.jpeg" alt="Dr. Pradeepika Kaushik" class="profile-image">
-                        <div class="image-overlay"></div>
-                        <div class="scientific-overlay">
-                            <div class="scientific-element" style="top: 10%; left: 10%;">
-                                <img src="images/coding-concept-illustration_114360-22486.avif" alt="Data Analysis">
-                            </div>
-                            <div class="scientific-element" style="top: 20%; right: 10%;">
-                                <img src="images/web-development-tools-elements-infographic-digital-design-processes_92753-32758.avif" alt="Visualization">
-                            </div>
-                            <div class="scientific-element" style="bottom: 15%; left: 15%;">
-                                <img src="images/linear-web-development-illustration_1257-357.avif" alt="Research">
-                            </div>
+                <div class="col-lg-6">
+                    <div class="profile-container">
+                        <div class="profile-frame">
+                            <img src="praddy_image.jpeg" alt="Dr. Pradeepika Kaushik" class="profile-image">
                         </div>
                     </div>
                 </div>
@@ -106,6 +123,51 @@
                             <h3>5+</h3>
                             <p>Years Industry Leadership</p>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Add this new section after the About section and before the Skills section -->
+    <section id="documents" class="documents-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Professional Documents</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <h3>Curriculum Vitae</h3>
+                        <p>Up-to-date CV highlighting my professional journey, skills, and achievements (5 pages)</p>
+                        <a href="Praddy_CV_24.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Self-Reflection</h3>
+                        <p>Personal assessment of my performance and growth this year (1 page)</p>
+                        <a href="self_reflection.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i> Download Reflection
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="document-card">
+                        <div class="document-icon">
+                            <i class="fas fa-bullseye"></i>
+                        </div>
+                        <h3>Career Goals</h3>
+                        <p>Statement outlining my professional aspirations and future objectives (1 page)</p>
+                        <a href="career_goals.pdf" class="btn btn-primary" download>
+                            <i class="fas fa-download"></i> Download Goals
+                        </a>
                     </div>
                 </div>
             </div>
