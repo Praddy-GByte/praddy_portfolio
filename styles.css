@@ -3,13 +3,13 @@
     --secondary-color: #FFC627; /* ASU Gold */
     --accent-color: #FFC627;
     --text-color: #ffffff;
-    --light-bg: rgba(0, 0, 0, 0.7);
-    --dark-bg: rgba(255, 255, 255, 0.05);
+    --light-bg: transparent;
+    --dark-bg: transparent;
     --gradient: linear-gradient(135deg, #8C1D40, #FFC627);
     --card-shadow: 0 10px 30px rgba(140, 29, 64, 0.1);
     --hover-shadow: 0 15px 40px rgba(140, 29, 64, 0.15);
     --welcome-text: #ffffff;
-    --header-bg: rgba(0, 0, 0, 0.7);
+    --header-bg: transparent;
     --nav-text: #ffffff;
     --border-color: rgba(255, 198, 39, 0.1);
     --yellow-border: #FFC627;
@@ -26,7 +26,7 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: #ffffff;
-    background-color: #000000;
+    background: transparent;
     position: relative;
     overflow-x: hidden;
     background: #000000;
@@ -67,7 +67,7 @@ body::before {
 
 /* Navigation */
 .navbar {
-    background-color: rgba(0, 0, 0, 0.8) !important;
+    background: transparent !important;
     padding: 1rem 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px);
@@ -93,12 +93,12 @@ body::before {
 
 /* Hero Section Styles */
 .hero-section {
+    background: transparent;
     min-height: 100vh;
     display: flex;
     align-items: center;
     padding: 100px 0;
     position: relative;
-    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
 }
 
 .profile-image-container {
@@ -207,8 +207,8 @@ body::before {
 
 /* About Section Styles */
 .about-section {
+    background: transparent;
     padding: 100px 0;
-    background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
 }
 
 .about-content {
@@ -591,10 +591,10 @@ body::before {
 }
 
 .skill-category, .timeline-content, .project-card, .publication-card, .contact-card {
-    background: rgba(0, 0, 0, 0.8);
-    color: #ffffff;
-    border: 1px solid #FFC627;
+    background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(5px);
+    border: 1px solid #FFC627;
+    color: #ffffff;
     border-radius: 15px;
     padding: 2rem;
     box-shadow: var(--card-shadow);
@@ -733,14 +733,14 @@ body::before {
 
 /* Skills Section */
 .skills-section {
-    background-color: #000000;
+    background: transparent;
     padding: 100px 0;
     position: relative;
     z-index: 1;
 }
 
 .skill-category {
-    background: rgba(0, 0, 0, 0.8);
+    background: rgba(0, 0, 0, 0.3);
     border: 1px solid #FFC627;
     padding: 30px;
     border-radius: 15px;
@@ -779,7 +779,7 @@ body::before {
 
 .progress {
     height: 8px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background: rgba(0, 0, 0, 0.3);
     border-radius: 4px;
     overflow: hidden;
 }
@@ -793,8 +793,8 @@ body::before {
 
 /* Experience Section */
 .experience-section {
-    padding: 5rem 0;
-    background-color: var(--light-bg);
+    background: transparent;
+    padding: 100px 0;
 }
 
 .timeline {
@@ -834,7 +834,7 @@ body::before {
 
 .timeline-content {
     padding: 20px;
-    background: var(--light-bg);
+    background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     box-shadow: var(--card-shadow);
@@ -890,12 +890,12 @@ body::before {
 
 /* Publications Section */
 .publications-section {
-    padding: 5rem 0;
-    background-color: white;
+    background: transparent;
+    padding: 100px 0;
 }
 
 .publication-card {
-    background: var(--light-bg);
+    background: rgba(0, 0, 0, 0.3);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -934,9 +934,8 @@ body::before {
 
 /* Projects Section */
 .projects-section {
-    padding: 5rem 0;
-    background-color: var(--light-bg);
-    padding-bottom: 0;
+    background: transparent;
+    padding: 100px 0;
 }
 
 /* Project Categories */
@@ -986,7 +985,7 @@ body::before {
 
 /* Project Cards */
 .project-card {
-    background: var(--light-bg);
+    background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
     border-radius: 15px;
     box-shadow: var(--card-shadow);
@@ -1109,7 +1108,7 @@ body::before {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: var(--light-bg);
+    background: rgba(0, 0, 0, 0.3);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.9rem;
@@ -1157,7 +1156,7 @@ body::before {
 }
 
 .project-tags span {
-    background: var(--light-bg);
+    background: rgba(0, 0, 0, 0.3);
     color: var(--primary-color);
     padding: 0.25rem 0.75rem;
     border-radius: 20px;
@@ -1168,10 +1167,8 @@ body::before {
 
 /* Contact Section */
 .contact-section {
-    padding: 5rem 0;
-    background: var(--light-bg);
-    position: relative;
-    overflow: hidden;
+    background: transparent;
+    padding: 100px 0;
 }
 
 .contact-options {
@@ -1181,7 +1178,7 @@ body::before {
 }
 
 .contact-card {
-    background: white;
+    background: rgba(0, 0, 0, 0.3);
     border-radius: 15px;
     box-shadow: var(--card-shadow);
     transition: all 0.3s ease;
@@ -1211,7 +1208,7 @@ body::before {
 }
 
 .contact-form-container {
-    background: white;
+    background: rgba(0, 0, 0, 0.3);
     padding: 2rem;
     border-radius: 20px;
     box-shadow: var(--card-shadow);
@@ -1242,11 +1239,12 @@ body::before {
 }
 
 .form-control {
-    border: 2px solid #eee;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px solid #FFC627;
     border-radius: 10px;
     padding: 1rem;
     transition: all 0.3s ease;
-    background: var(--light-bg);
+    color: #ffffff;
 }
 
 .form-control:focus {
@@ -1294,7 +1292,7 @@ body::before {
     position: absolute;
     bottom: 70px;
     right: 0;
-    background: white;
+    background: rgba(0, 0, 0, 0.3);
     border-radius: 20px;
     padding: 1rem;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -1322,7 +1320,7 @@ body::before {
 }
 
 .contact-option:hover {
-    background: var(--light-bg);
+    background: rgba(0, 0, 0, 0.3);
     color: var(--primary-color);
     transform: translateX(-5px);
 }
@@ -1353,10 +1351,11 @@ body::before {
 
 /* Footer */
 .footer {
-    background-color: rgba(0, 0, 0, 0.7);
+    background: transparent;
+    backdrop-filter: blur(5px);
+    border-top: 1px solid #FFC627;
     color: #ffffff;
     padding: 2rem 0;
-    backdrop-filter: blur(5px);
 }
 
 .footer-links {
@@ -1572,7 +1571,7 @@ body::before {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: var(--light-bg);
+    background: rgba(0, 0, 0, 0.3);
     padding: 0.75rem 1rem;
     border-radius: 10px;
     font-size: 0.9rem;
@@ -1591,7 +1590,7 @@ body::before {
 }
 
 .stat-card {
-    background: white;
+    background: rgba(0, 0, 0, 0.3);
     padding: 1.5rem;
     border-radius: 15px;
     box-shadow: var(--card-shadow);
@@ -1844,7 +1843,7 @@ section {
     position: relative;
     z-index: 1;
     padding: 100px 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background: transparent;
     color: #ffffff;
     backdrop-filter: blur(5px);
 }
@@ -2171,10 +2170,10 @@ section {
 
 /* Adjust section backgrounds */
 section {
-    background: rgba(0, 0, 0, 0.7);
-    backdrop-filter: blur(5px);
+    background: transparent;
     position: relative;
     z-index: 1;
+    padding: 100px 0;
 }
 
 /* Responsive Design */
