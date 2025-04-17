@@ -103,23 +103,47 @@ body::before {
 .hero-content {
     position: relative;
     z-index: 2;
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
 }
 
 .hero-title {
-    font-size: 3.5rem;
+    font-size: 4rem;
     font-weight: 800;
     color: var(--primary-color);
     margin-bottom: 1rem;
     line-height: 1.2;
+    position: relative;
+    display: inline-block;
+}
+
+.hero-title span {
+    display: inline-block;
+}
+
+.hero-title .name {
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e, #ffb3b3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientFlow 3s ease infinite;
+}
+
+.hero-title .spax {
+    color: #4a90e2;
+    animation: pulse 2s ease infinite;
 }
 
 .hero-subtitle {
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 600;
     color: var(--secondary-color);
     margin-bottom: 1.5rem;
     position: relative;
     display: inline-block;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.5s;
 }
 
 .hero-subtitle::after {
@@ -139,6 +163,8 @@ body::before {
     color: var(--text-color);
     margin-bottom: 2rem;
     max-width: 600px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1s;
 }
 
 .hero-buttons {
@@ -189,6 +215,9 @@ body::before {
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transform: scale(0.8);
+    animation: scaleIn 1s ease forwards 0.5s;
 }
 
 .profile-frame {
@@ -200,19 +229,19 @@ body::before {
     position: relative;
     box-shadow: 0 20px 40px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
+    overflow: hidden;
 }
 
 .profile-frame::before {
     content: '';
     position: absolute;
-    top: -5px;
-    left: -5px;
-    right: -5px;
-    bottom: -5px;
-    background: linear-gradient(135deg, #ffd700, #ffa500);
-    border-radius: 50%;
-    z-index: -1;
-    animation: rotate 4s linear infinite;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: translateX(-100%);
+    animation: shine 3s infinite;
 }
 
 @keyframes rotate {
@@ -285,11 +314,11 @@ body::before {
     }
     
     .hero-title {
-        font-size: 2.2rem;
+        font-size: 2.5rem;
     }
     
     .hero-subtitle {
-        font-size: 1.2rem;
+        font-size: 1.5rem;
     }
     
     .profile-frame {
@@ -1865,5 +1894,112 @@ section {
     
     .document-icon {
         font-size: 2rem;
+    }
+}
+
+/* Hero Section Animations */
+.hero-content {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 1s ease forwards;
+}
+
+.hero-title {
+    font-size: 4rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+    position: relative;
+    display: inline-block;
+}
+
+.hero-title span {
+    display: inline-block;
+}
+
+.hero-title .name {
+    background: linear-gradient(45deg, #ff6b6b, #ff8e8e, #ffb3b3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientFlow 3s ease infinite;
+}
+
+.hero-title .spax {
+    color: #4a90e2;
+    animation: pulse 2s ease infinite;
+}
+
+.hero-subtitle {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 0.5s;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 2rem;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards 1s;
+}
+
+.profile-container {
+    opacity: 0;
+    transform: scale(0.8);
+    animation: scaleIn 1s ease forwards 0.5s;
+}
+
+.profile-frame {
+    position: relative;
+    overflow: hidden;
+}
+
+.profile-frame::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+    transform: translateX(-100%);
+    animation: shine 3s infinite;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes shine {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(-100%);
     }
 } 
