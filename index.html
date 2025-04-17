@@ -283,7 +283,7 @@
                         0 0 40px rgba(255, 198, 39, 0.3),
                         0 0 60px rgba(255, 198, 39, 0.2);
             animation: float 6s ease-in-out infinite, pulse 4s ease-in-out infinite;
-            background: linear-gradient(135deg, #000000, #000000); /* Black gradient */
+            background: linear-gradient(135deg, #FFC627, #FFC627); /* Gold gradient */
             padding: 3px; /* Space for the border */
         }
 
@@ -1448,40 +1448,44 @@
             }
         }
 
-        .sticker-code {
+        .hero-stickers {
             position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            z-index: 1;
+        }
+
+        .sticker-code {
+            position: relative;
             padding: 5px 10px;
             border-radius: 15px;
             font-size: 0.8rem;
             font-weight: 600;
             transform: rotate(-5deg);
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            z-index: 1;
             background: linear-gradient(135deg, #2196F3, #1976D2);
             color: white;
+            margin-left: auto;
+            width: fit-content;
         }
 
         .sticker-code-1 {
-            top: 20px;
-            right: 20px;
             animation: float 3s ease-in-out infinite;
         }
 
         .sticker-code-2 {
-            bottom: 20px;
-            left: 20px;
             animation: float 3s ease-in-out infinite 1s;
         }
 
         .sticker-code-3 {
-            top: 50%;
-            right: 10px;
             animation: float 3s ease-in-out infinite 2s;
         }
 
         .sticker-code-4 {
-            bottom: 30px;
-            right: 30px;
             animation: float 3s ease-in-out infinite 1.5s;
         }
     </style>
@@ -1513,10 +1517,6 @@
                 <div class="col-lg-4 text-center" data-aos="fade-right">
                     <div class="profile-image-container">
                         <img src="praddy_image.jpeg" alt="Dr. Pradeepika Kaushik" class="profile-image">
-                        <span class="sticker sticker-code sticker-code-1">HTML5</span>
-                        <span class="sticker sticker-code sticker-code-2">CSS3</span>
-                        <span class="sticker sticker-code sticker-code-3">JS</span>
-                        <span class="sticker sticker-code sticker-code-4">React</span>
                     </div>
                 </div>
                 <div class="col-lg-8" data-aos="fade-left">
@@ -1540,6 +1540,12 @@
                                 <i class="fas fa-envelope"></i> Email
                             </a>
                         </div>
+                    </div>
+                    <div class="hero-stickers">
+                        <span class="sticker sticker-code sticker-code-1">HTML5</span>
+                        <span class="sticker sticker-code sticker-code-2">CSS3</span>
+                        <span class="sticker sticker-code sticker-code-3">JS</span>
+                        <span class="sticker sticker-code sticker-code-4">React</span>
                     </div>
                 </div>
             </div>
