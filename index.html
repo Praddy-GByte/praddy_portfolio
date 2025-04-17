@@ -336,9 +336,8 @@
             font-size: 1.5rem;
             font-family: 'Inter', sans-serif;
             font-weight: 300;
-            color: rgba(255, 255, 255, 0.8);
+            color: white;
             margin-bottom: 10px;
-            animation: fadeInDown 1s ease-out;
         }
         
         .welcome {
@@ -346,28 +345,29 @@
             font-size: 1.8rem;
             font-family: 'Inter', sans-serif;
             font-weight: 400;
-            color: rgba(255, 255, 255, 0.9);
-            animation: fadeInUp 1s ease-out;
+            color: white;
         }
         
         .name {
             color: white;
             position: relative;
             display: inline-block;
-            animation: glow 2s ease-in-out infinite alternate;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
             font-size: 3.5rem;
         }
         
         .spax {
             color: var(--accent);
             font-style: italic;
-            animation: pulse 2s ease-in-out infinite, glow 2s ease-in-out infinite alternate;
-            text-shadow: 0 0 10px rgba(0, 180, 216, 0.8);
             font-size: 4.5rem;
             display: inline-block;
             transform-origin: center;
-            background: none;
+        }
+
+        .about-title .name {
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            animation: blink 1s infinite;
         }
 
         @keyframes glow {
@@ -1650,9 +1650,9 @@
                 <div class="col-lg-8" data-aos="fade-left">
                     <div class="hero-content">
                         <div class="hero-greeting">
-                            <span class="hello">HELLO THERE</span>
-                            <span class="welcome">WELCOME</span>
-                            <span class="at">@----</span>
+                            <span class="greeting">Hello There</span>
+                            <span class="welcome">Welcome</span>
+                            <span class="at"> @ </span>
                         </div>
                         <h1 class="hero-title">
                             <span class="name">PraddY</span><span class="spax">SpaX</span>
