@@ -10,7 +10,7 @@
     --primary-dark: #1a252f;
     --secondary: #3498DB;
     --dark: #2C3E50;
-    --light: #f8f9fa;
+    --light: #ffffff;
     --text: #2C3E50;
     --text-light: #6c757d;
     --border: #e9ecef;
@@ -48,21 +48,22 @@ body {
 
 /* Hero Section */
 .hero-section {
-    background: linear-gradient(to right, var(--primary), var(--primary-dark));
+    background: white;
     padding: 120px 0 80px;
-    color: white;
+    color: var(--text);
 }
 
 .hero-title {
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: 1.5rem;
+    color: var(--primary);
 }
 
 .hero-subtitle {
     font-size: 1.25rem;
     margin-bottom: 1.5rem;
-    opacity: 0.9;
+    color: var(--text);
 }
 
 /* Profile Image */
@@ -72,13 +73,14 @@ body {
     margin: 0 auto;
     border-radius: 50%;
     overflow: hidden;
-    border: 4px solid white;
+    border: 4px solid var(--border);
 }
 
 .profile-image {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    display: block;
 }
 
 /* Sections */
@@ -122,11 +124,13 @@ section {
     border-radius: 4px;
     font-weight: 500;
     transition: var(--transition);
+    color: white;
 }
 
 .btn-primary:hover {
     background-color: var(--primary);
     transform: translateY(-2px);
+    color: white;
 }
 
 .btn-outline {
@@ -180,6 +184,7 @@ section {
     border: 1px solid var(--border);
     border-radius: 4px;
     padding: 0.75rem;
+    color: var(--text);
 }
 
 .form-control:focus {
@@ -203,6 +208,44 @@ section {
 .footer-links a:hover {
     opacity: 1;
     color: var(--secondary);
+}
+
+/* Text Colors */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+p {
+    color: var(--text);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+/* Links */
+a {
+    color: var(--secondary);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+a:hover {
+    color: var(--primary);
+    text-decoration: none;
+}
+
+/* Images */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Remove all gradient backgrounds */
+[class*="gradient"],
+[style*="gradient"] {
+    background: white !important;
 }
 
 /* Responsive */
