@@ -2238,4 +2238,65 @@ section {
         width: 15px;
         height: 15px;
     }
+}
+
+/* Reflection & Goals Section */
+.reflection-section {
+    padding: 4rem 0;
+    background: transparent;
+}
+
+.reflection-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.reflection-card, .goals-card {
+    background: transparent;
+    border: 2px solid var(--primary-color);
+    border-radius: 10px;
+    padding: 2rem;
+    transition: transform 0.3s ease;
+}
+
+.reflection-card:hover, .goals-card:hover {
+    transform: translateY(-5px);
+}
+
+.reflection-card h3, .goals-card h3 {
+    color: var(--primary-color);
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+}
+
+.reflection-text h4, .goal-item h4 {
+    color: var(--secondary-color);
+    margin: 1.5rem 0 0.5rem;
+    font-size: 1.3rem;
+}
+
+.reflection-text p, .goal-item p {
+    color: var(--text-color);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.goal-item {
+    margin-bottom: 2rem;
+}
+
+.goal-item:last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .reflection-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .reflection-card, .goals-card {
+        padding: 1.5rem;
+    }
 } 
