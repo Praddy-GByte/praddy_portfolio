@@ -1560,6 +1560,62 @@
                             0 0 60px rgba(255, 198, 39, 0.2);
             }
         }
+
+        /* Hero Section Text Styles */
+        .hero-greeting {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 2.5rem;
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .hero-greeting .hello {
+            color: var(--primary);
+            font-size: 3rem;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .hero-greeting .welcome {
+            color: white;
+            font-size: 2.2rem;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .hero-greeting .at {
+            color: var(--primary);
+            font-size: 2.5rem;
+            display: block;
+        }
+
+        .name {
+            color: white;
+            position: relative;
+            display: inline-block;
+            font-size: 3.5rem;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .spax {
+            color: var(--accent);
+            font-style: italic;
+            font-size: 4.5rem;
+            display: inline-block;
+            transform-origin: center;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .about-title .name {
+            color: var(--secondary);
+            position: relative;
+            display: inline-block;
+            animation: blink 1s infinite;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
     </style>
 </head>
 <body>
@@ -1593,8 +1649,8 @@
                 </div>
                 <div class="col-lg-8" data-aos="fade-left">
                     <div class="hero-content">
-                        <div class="welcome-sticker">
-                            <span class="hello">HELLO THERE!</span>
+                        <div class="hero-greeting">
+                            <span class="hello">HELLO THERE</span>
                             <span class="welcome">WELCOME</span>
                             <span class="at">@----</span>
                         </div>
