@@ -974,6 +974,88 @@
                 height: 200px;
             }
         }
+
+        /* Memberships Section Styles */
+        .memberships-section {
+            background-color: #f8f9fa;
+            padding: 80px 0;
+        }
+
+        .membership-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .membership-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .membership-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .membership-list, .achievement-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .membership-list li, .achievement-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .membership-list li::before, .achievement-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-weight: bold;
+        }
+
+        /* Certifications Section Styles */
+        .certifications-section {
+            padding: 80px 0;
+        }
+
+        .certification-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            height: 100%;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+        }
+
+        .certification-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .certification-icon {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .certification-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+            color: var(--dark);
+        }
+
+        .certification-card p {
+            color: var(--text-light);
+            margin-bottom: 0;
+        }
     </style>
 </head>
 <body>
@@ -1015,7 +1097,7 @@
                             </span>
                         </h1>
                         <p class="text-white mb-4" style="font-size: 1.2rem; line-height: 1.6; max-width: 600px;">
-                            Geospatial & Visualization Scientist | Water Resource Specialist | AI Enthusiast
+                            Geospatial & Data Visualization Scientist | AI-Powered Hydrological Modeling | Full-Stack Developer
                         </p>
                         <div class="hero-buttons">
                             <a href="Praddy_CV_25.pdf" class="btn btn-primary" download>
@@ -1051,9 +1133,11 @@
                         <div class="mt-4">
                             <h5>Education</h5>
                             <ul class="list-unstyled">
-                                <li><strong>Ph.D. in Remote Sensing & GIS</strong> - Banasthali University</li>
-                                <li><strong>M.Tech in Remote Sensing</strong> - Banasthali University</li>
-                                <li><strong>B.Tech in Computer Science</strong> - Rajasthan Technical University</li>
+                                <li><strong>Geospatial & Data Visualization Scientist (Post-Doc)</strong> - 2024-Present</li>
+                                <li><strong>Ph.D. in Geology/Earth Science</strong> - Banaras Hindu University, India (2013-2019)</li>
+                                <li><strong>Visiting Researcher</strong> - University of Glasgow, Scotland, UK (2016)</li>
+                                <li><strong>M.Sc. in Geological and Earth Sciences</strong> - Jiwaji University, India (2009-2011)</li>
+                                <li><strong>B.Sc. (Hons.) in Geology</strong> - Aligarh Muslim University, India (2006-2009)</li>
                             </ul>
                         </div>
                     </div>
@@ -1148,15 +1232,15 @@
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span>Node.js/Express</span>
+                            <span>Node.js/Express.js</span>
                             <div class="progress">
-                                <div class="progress-bar" style="width: 85%"></div>
+                                <div class="progress-bar" style="width: 90%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <span>WebSocket/Socket.io</span>
                             <div class="progress">
-                                <div class="progress-bar" style="width: 80%"></div>
+                                <div class="progress-bar" style="width: 85%"></div>
                             </div>
                         </div>
                     </div>
@@ -1177,15 +1261,15 @@
                             </div>
                         </div>
                         <div class="skill-item">
-                            <span>Remote Sensing</span>
+                            <span>FME</span>
                             <div class="progress">
-                                <div class="progress-bar" style="width: 95%"></div>
+                                <div class="progress-bar" style="width: 90%"></div>
                             </div>
                         </div>
                         <div class="skill-item">
                             <span>Geospatial Analysis</span>
                             <div class="progress">
-                                <div class="progress-bar" style="width: 90%"></div>
+                                <div class="progress-bar" style="width: 95%"></div>
                             </div>
                         </div>
                     </div>
@@ -1253,14 +1337,14 @@
                         </div>
                         <h3>Planys Technologies</h3>
                         <h4>Specialist - Software Engineering & Business Operations</h4>
-                        <p class="date">2023</p>
+                        <p class="date">2023 - Present</p>
                         <ul>
-                            <li>Spearheaded the development of React applications and RESTful APIs for underwater inspection systems</li>
-                            <li>Implemented WebSocket and Socket.io for real-time communication in marine asset monitoring</li>
-                            <li>Managed business development and strategic partnerships in European markets</li>
-                            <li>Led research and analysis for grant and funding opportunities in marine technology</li>
-                            <li>Developed innovative solutions for 3D geospatial data visualization of underwater structures</li>
-                            <li>Coordinated cross-functional teams between engineering and business units</li>
+                            <li>Business Development: Research and analysis of grant/funding opportunities, government projects, and potential collaborations in European region</li>
+                            <li>Software Development: Led React applications and RESTful APIs development</li>
+                            <li>Implemented WebSocket and Socket.io for real-time communication</li>
+                            <li>Developed one-page applications with user-centric design principles</li>
+                            <li>Managed servers and created APIs using Node.js</li>
+                            <li>Utilized Postman for efficient database management</li>
                         </ul>
                     </div>
                 </div>
@@ -1269,15 +1353,28 @@
                         <div class="company-logo">
                             <img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/4d/Banasthali_Vidyapith_Logo.svg/1200px-Banasthali_Vidyapith_Logo.svg.png" alt="Banasthali University" class="company-image">
                         </div>
+                        <h3>Assistant Professor (Remote Sensing & GIS)</h3>
+                        <h4>Banasthali University, Rajasthan, India</h4>
+                        <p class="date">2016 - 2018</p>
+                        <ul>
+                            <li>Supervised bachelor's and master's students in graduation projects</li>
+                            <li>Led research programs on river and catchment physical processes</li>
+                            <li>Conducted training classes and developed documentation</li>
+                            <li>Delivered lectures on remote sensing & GIS, structural geological mapping, and environmental science</li>
+                            <li>Organized national conferences and university programs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item" data-aos="fade-left">
+                    <div class="timeline-content">
                         <h3>GIS Specialist - Freelancer</h3>
                         <p class="date">2020 - 2022</p>
                         <ul>
-                            <li>Developed custom tools and procedures for geospatial data automation</li>
-                            <li>Created web applications for Public Works and Utilities projects with interactive mapping</li>
-                            <li>Managed geospatial databases and implemented GIS applications for various clients</li>
-                            <li>Designed custom datasets and maps tailored to specific business needs</li>
-                            <li>Provided training and technical support for GIS applications to end-users</li>
-                            <li>Conducted spatial analysis for environmental and urban planning projects</li>
+                            <li>Developed tools and procedures for geospatial data automation</li>
+                            <li>Created web applications for Public Works and Utilities projects</li>
+                            <li>Managed geospatial databases and implemented GIS applications</li>
+                            <li>Designed custom datasets and maps for business needs</li>
+                            <li>Provided training and technical support for GIS applications</li>
                         </ul>
                     </div>
                 </div>
@@ -1575,5 +1672,79 @@
             }
         });
     </script>
+
+    <!-- Memberships Section -->
+    <section id="memberships" class="memberships-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Professional Memberships</h2>
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="membership-card">
+                        <div class="membership-icon">
+                            <i class="fas fa-globe-europe"></i>
+                        </div>
+                        <h3>International Organizations</h3>
+                        <ul class="membership-list">
+                            <li>European Geoscience Union (EGU)</li>
+                            <li>Geological Society of America (GSA)</li>
+                            <li>European Space Agency (ESA)</li>
+                            <li>International Society of Photogrammetry and Remote Sensing</li>
+                            <li>Indian Society of Remote Sensing</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="membership-card">
+                        <div class="membership-icon">
+                            <i class="fas fa-award"></i>
+                        </div>
+                        <h3>Achievements & Awards</h3>
+                        <ul class="achievement-list">
+                            <li>First Rank Holder Award (2011)</li>
+                            <li>Prestigious AORC-DST Inspire Research Fellowship Award (2013)</li>
+                            <li>TCS Amsterdam Marathon Runner - 8km (2018-2019)</li>
+                            <li>TCS Mizuno Half Marathon - 21km Runner (2020-2022)</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Teaching Certifications Section -->
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Teaching Certifications</h2>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="certification-card">
+                        <div class="certification-icon">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3>Tools and Techniques in Earth Science</h3>
+                        <p>Faculty Development Program - India</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="certification-card">
+                        <div class="certification-icon">
+                            <i class="fas fa-chalkboard-teacher"></i>
+                        </div>
+                        <h3>Managing Money for a Happy Family</h3>
+                        <p>Bhartiya Insight, India</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="certification-card">
+                        <div class="certification-icon">
+                            <i class="fas fa-user-graduate"></i>
+                        </div>
+                        <h3>Personality Development of Faculty</h3>
+                        <p>MHRD, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>
