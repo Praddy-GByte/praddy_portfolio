@@ -26,13 +26,13 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" as="style">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@300;400;600;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <style>
         /* Reset and Base Styles */
@@ -43,12 +43,12 @@
         }
         
         :root {
-            --primary: #0066cc;
-            --primary-dark: #0052a3;
-            --secondary: #ff6b6b;
+            --primary: #8C1D40;
+            --primary-dark: #6b152f;
+            --secondary: #FFC627;
             --dark: #1a1a2e;
             --light: #f8f9fa;
-            --accent: #00b4d8;
+            --accent: #FFC627;
             --text: #333333;
             --text-light: #6c757d;
             --maroon: #8C1D40;
@@ -56,15 +56,78 @@
         }
         
         body {
-            font-family: 'Source Sans Pro', sans-serif !important;
+            font-family: 'Montserrat', sans-serif !important;
             color: var(--text);
             background-color: var(--light);
             overflow-x: hidden;
+            position: relative;
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Merriweather', serif !important;
+            font-family: 'Playfair Display', serif !important;
             font-weight: 700;
+        }
+        
+        /* 3D Floating Elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .floating-element {
+            position: absolute;
+            background: rgba(140, 29, 64, 0.1);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+        }
+
+        .floating-element:nth-child(1) {
+            width: 100px;
+            height: 100px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .floating-element:nth-child(2) {
+            width: 150px;
+            height: 150px;
+            top: 30%;
+            right: 15%;
+            animation-delay: 2s;
+        }
+
+        .floating-element:nth-child(3) {
+            width: 80px;
+            height: 80px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .floating-element:nth-child(4) {
+            width: 120px;
+            height: 120px;
+            bottom: 40%;
+            right: 25%;
+            animation-delay: 6s;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+            50% {
+                transform: translateY(-20px) rotate(180deg);
+            }
+            100% {
+                transform: translateY(0) rotate(360deg);
+            }
         }
         
         /* Profile Image Styles */
@@ -76,20 +139,20 @@
             border-radius: 50%;
             overflow: hidden;
             border: 5px solid var(--gold);
-            box-shadow: 0 0 20px rgba(255, 198, 39, 0.5),
-                        inset 0 0 20px rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 30px rgba(255, 198, 39, 0.5),
+                        inset 0 0 30px rgba(255, 255, 255, 0.3);
             animation: profileGlow 3s infinite alternate;
             transition: all 0.3s ease;
         }
         
         @keyframes profileGlow {
             0% {
-                box-shadow: 0 0 20px rgba(255, 198, 39, 0.5),
-                           inset 0 0 20px rgba(255, 255, 255, 0.3);
+                box-shadow: 0 0 30px rgba(255, 198, 39, 0.5),
+                           inset 0 0 30px rgba(255, 255, 255, 0.3);
             }
             100% {
-                box-shadow: 0 0 30px rgba(255, 198, 39, 0.8),
-                           inset 0 0 30px rgba(255, 255, 255, 0.5);
+                box-shadow: 0 0 50px rgba(255, 198, 39, 0.8),
+                           inset 0 0 50px rgba(255, 255, 255, 0.5);
             }
         }
         
@@ -111,13 +174,14 @@
         
         /* Project Card Styles */
         .project-card {
-            background-color: white;
+            background: rgba(255, 255, 255, 0.95);
             border-radius: 15px;
             padding: 30px;
             height: 100%;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
             text-align: center;
+            backdrop-filter: blur(10px);
         }
         
         .project-icon {
@@ -128,8 +192,8 @@
         }
         
         .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
         }
         
         .project-card:hover .project-icon {
@@ -215,7 +279,7 @@
         
         /* Hero Section Specific Styles */
         .hero-section {
-            background: linear-gradient(135deg, var(--dark), #16213e);
+            background: linear-gradient(135deg, var(--dark), #1a1a2e);
             color: white;
             padding: 150px 0 100px;
             position: relative;
@@ -1309,7 +1373,7 @@
                             Geospatial & Visualization Scientist | Water Resource Specialist | AI Enthusiast
                         </p>
                         <div class="hero-buttons">
-                            <a href="Praddy_CV_24.pdf" class="btn btn-primary" download>
+                            <a href="Praddy_CV_25.pdf" class="btn btn-primary" download>
                                 <i class="fas fa-download"></i> Download CV
                             </a>
                             <a href="https://www.linkedin.com/in/dr-pradeepika-kaushik/" class="btn btn-outline" target="_blank">
@@ -1436,7 +1500,7 @@
                         </div>
                         <h3>Curriculum Vitae</h3>
                         <p>Up-to-date CV highlighting my professional journey, skills, and achievements (5 pages)</p>
-                        <a href="Praddy_CV_24.pdf" class="btn btn-primary" download>
+                        <a href="Praddy_CV_25.pdf" class="btn btn-primary" download>
                             <i class="fas fa-download"></i> Download CV
                         </a>
                     </div>
@@ -1448,7 +1512,7 @@
                         </div>
                         <h3>Self-Reflection</h3>
                         <p>Personal assessment of my performance and growth this year (1 page)</p>
-                        <a href="self_reflection.pdf" class="btn btn-primary" download>
+                        <a href="Self Reflection_Performance.pdf" class="btn btn-primary" download>
                             <i class="fas fa-download"></i> Download Reflection
                         </a>
                     </div>
@@ -1460,7 +1524,7 @@
                         </div>
                         <h3>Career Goals</h3>
                         <p>Statement outlining my professional aspirations and future objectives (1 page)</p>
-                        <a href="career_goals.pdf" class="btn btn-primary" download>
+                        <a href="CAREER GOALS STATEMENT.pdf" class="btn btn-primary" download>
                             <i class="fas fa-download"></i> Download Goals
                         </a>
                     </div>
