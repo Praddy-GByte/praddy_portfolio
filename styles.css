@@ -20,6 +20,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
 }
 
 body {
@@ -539,7 +541,7 @@ body::before {
     position: absolute;
     width: 100px;
     height: 100px;
-    background: rgba(255, 255, 255, 0.9);
+    background: transparent;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -608,7 +610,6 @@ body::before {
 
 .skill-category, .timeline-content, .project-card, .publication-card, .contact-card {
     background: transparent;
-    backdrop-filter: none;
     border: 1px solid #FFC627;
     color: #000000;
     border-radius: 15px;
@@ -1838,7 +1839,7 @@ img {
     position: absolute;
     width: 100px;
     height: 100px;
-    background: rgba(255, 255, 255, 0.9);
+    background: transparent;
     border-radius: 10px;
     display: flex;
     align-items: center;
