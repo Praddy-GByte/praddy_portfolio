@@ -1221,4 +1221,169 @@ body::before {
     .github-header h3 {
         font-size: 1rem;
     }
+}
+
+/* Featured Project */
+.featured-project {
+    margin-bottom: 3rem;
+}
+
+.project-card.featured {
+    border: 2px solid var(--primary-color);
+    box-shadow: 0 10px 30px rgba(26, 35, 126, 0.15);
+    transition: all 0.3s ease;
+}
+
+.project-card.featured:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(26, 35, 126, 0.2);
+}
+
+.project-card.featured .project-image {
+    height: 400px;
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card.featured .project-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.project-card.featured:hover .project-image img {
+    transform: scale(1.05);
+}
+
+.project-card.featured .project-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 35, 126, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project-card.featured:hover .project-overlay {
+    opacity: 1;
+}
+
+.project-card.featured .project-preview {
+    color: white;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    border: 2px solid white;
+    border-radius: 30px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.project-card.featured .project-preview:hover {
+    background: white;
+    color: var(--primary-color);
+}
+
+.project-card.featured .project-content {
+    padding: 2rem;
+}
+
+.project-card.featured .project-description {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+    color: var(--text-color);
+}
+
+.project-card.featured .project-features {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.project-card.featured .feature {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: var(--light-bg);
+    padding: 0.75rem 1rem;
+    border-radius: 10px;
+    font-size: 0.9rem;
+}
+
+.project-card.featured .feature i {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.project-stats {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    height: 100%;
+}
+
+.stat-card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: var(--card-shadow);
+    text-align: center;
+    transition: all 0.3s ease;
+    border: 1px solid var(--border-color);
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--hover-shadow);
+}
+
+.stat-card i {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.stat-card h4 {
+    color: var(--primary-color);
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.stat-card p {
+    color: var(--text-color);
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Responsive Design for Featured Project */
+@media (max-width: 992px) {
+    .project-card.featured .project-image {
+        height: 300px;
+    }
+
+    .project-card.featured .project-features {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-card {
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-card.featured .project-image {
+        height: 250px;
+    }
+
+    .project-card.featured .project-content {
+        padding: 1.5rem;
+    }
 } 
