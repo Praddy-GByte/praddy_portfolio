@@ -2,29 +2,47 @@
 AOS.init({
     duration: 1000,
     once: true,
-    offset: 100
+    offset: 100,
+    easing: 'ease-out-cubic'
 });
 
 // Smooth scrolling for navigation links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     });
 });
 
 // Navbar background change on scroll
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.backgroundColor = 'rgba(44, 62, 80, 0.9)';
+const navbar = document.querySelector('.navbar');
+let lastScrollTop = 0;
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset;
+    
+    // Change navbar background on scroll
+    if (scrollTop > 50) {
+        navbar.style.backgroundColor = 'rgba(26, 26, 46, 0.95)';
         navbar.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
     } else {
-        navbar.style.backgroundColor = 'var(--primary-color)';
+        navbar.style.backgroundColor = 'transparent';
         navbar.style.boxShadow = 'none';
     }
+    
+    // Hide/show navbar on scroll
+    if (scrollTop > lastScrollTop) {
+        navbar.style.transform = 'translateY(-100px)';
+    } else {
+        navbar.style.transform = 'translateY(0)';
+    }
+    lastScrollTop = scrollTop;
 });
 
 // Animate progress bars on scroll
@@ -146,7 +164,7 @@ style.textContent = `
         cursor: pointer;
         display: none;
         font-size: 20px;
-        transition: all 0.3s ease;
+        transition: var(--transition);
         z-index: 1000;
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     }
@@ -162,17 +180,17 @@ document.head.appendChild(style);
 const projectCards = document.querySelectorAll('.project-card');
 projectCards.forEach(card => {
     card.addEventListener('mouseenter', () => {
-        card.style.transform = 'translateY(-10px)';
+        card.style.transform = 'translateY(-10px) scale(1.02)';
     });
     
     card.addEventListener('mouseleave', () => {
-        card.style.transform = 'translateY(0)';
+        card.style.transform = 'translateY(0) scale(1)';
     });
 });
 
 // Add parallax effect to hero section
+const heroSection = document.querySelector('.hero-section');
 window.addEventListener('scroll', () => {
-    const heroSection = document.querySelector('.hero-section');
     const scrollPosition = window.scrollY;
     heroSection.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
 });
@@ -223,4 +241,49 @@ categoryTabs.forEach(tab => {
 if (categoryTabs.length > 0) {
     categoryTabs[0].classList.add('active');
     projectCategories[0].classList.add('active');
-} 
+}
+
+// Add typing effect to hero subtitle
+const heroSubtitle = document.querySelector('.hero-subtitle');
+if (heroSubtitle) {
+    const text = heroSubtitle.textContent;
+    heroSubtitle.textContent = '';
+    let i = 0;
+    const typeWriter = () => {
+        if (i < text.length) {
+            heroSubtitle.textContent += text.charAt(i);
+            i++;
+            setTimeout(typeWriter, 100);
+        }
+    };
+    setTimeout(typeWriter, 1000);
+}
+
+// Add hover effect to profile image
+const profileFrame = document.querySelector('.profile-frame');
+if (profileFrame) {
+    profileFrame.addEventListener('mouseenter', () => {
+        profileFrame.style.transform = 'translateY(-10px) rotate(3deg)';
+    });
+    
+    profileFrame.addEventListener('mouseleave', () => {
+        profileFrame.style.transform = 'translateY(0) rotate(0)';
+    });
+}
+
+// Add smooth reveal animation to sections
+const revealElements = document.querySelectorAll('.section-title, .skill-category, .timeline-item, .project-card, .publication-card');
+
+const revealOnScroll = () => {
+    revealElements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+            element.classList.add('reveal');
+        }
+    });
+};
+
+window.addEventListener('scroll', revealOnScroll);
+revealOnScroll(); 
