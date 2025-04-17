@@ -31,7 +31,7 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: #000000;
-    background: transparent !important;
+    background: white !important;
     position: relative;
     overflow-x: hidden;
 }
@@ -1897,9 +1897,8 @@ section {
     position: relative;
     z-index: 1;
     padding: 100px 0;
-    background: transparent;
+    background: transparent !important;
     color: #000000;
-    backdrop-filter: none;
 }
 
 /* Documents Section */
@@ -2290,4 +2289,55 @@ section {
     .reflection-card, .goals-card {
         padding: 1.5rem;
     }
+}
+
+/* Remove all background styles */
+.background-3d,
+.grid-3d,
+.floating-element,
+.chemical-thread,
+.chemical-bond,
+.scientific-element,
+.grid-background,
+.particles,
+.dna-animation,
+.data-points,
+.data-point {
+    display: none !important;
+}
+
+/* Remove background animations */
+@keyframes gridMove,
+@keyframes float,
+@keyframes pulse,
+@keyframes rotate,
+@keyframes shine,
+@keyframes rotateThread,
+@keyframes pulseBond {
+    display: none;
+}
+
+/* Update body and section backgrounds */
+body {
+    background: white !important;
+}
+
+section {
+    background: transparent !important;
+    position: relative;
+    z-index: 1;
+    padding: 100px 0;
+}
+
+/* Remove backdrop filters and shadows */
+.container {
+    position: relative;
+    z-index: 1;
+    backdrop-filter: none;
+}
+
+/* Remove section borders and effects */
+section::before,
+section::after {
+    display: none;
 } 
