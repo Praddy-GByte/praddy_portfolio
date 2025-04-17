@@ -26,129 +26,109 @@
     <!-- Preload critical resources -->
     <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" as="style">
     <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" as="style">
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" as="style">
     
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Security headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://fonts.googleapis.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com; connect-src 'self' https://api.github.com;">
     
     <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
         :root {
-            --primary: #8C1D40;
-            --primary-dark: #6b152f;
-            --secondary: #FFC627;
+            --primary: #0066cc;
+            --primary-dark: #0052a3;
+            --secondary: #ff6b6b;
             --dark: #1a1a2e;
             --light: #f8f9fa;
-            --accent: #FFC627;
+            --accent: #00b4d8;
             --text: #333333;
             --text-light: #6c757d;
-            --maroon: #8C1D40;
-            --gold: #FFC627;
         }
         
         body {
-            font-family: 'Montserrat', sans-serif !important;
+            font-family: 'Inter', sans-serif;
             color: var(--text);
             background-color: var(--light);
             overflow-x: hidden;
-            position: relative;
         }
         
         h1, h2, h3, h4, h5, h6 {
-            font-family: 'Montserrat', sans-serif !important;
-            font-weight: 800;
-            letter-spacing: -0.5px;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
         }
         
-        /* Enhanced 3D Floating Elements */
-        .floating-elements {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: -1;
-            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0) 100%);
+        .navbar {
+            background-color: var(--dark) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+            transition: all 0.3s ease;
         }
-
-        .floating-element {
+        
+        .navbar.scrolled {
+            padding: 10px 0;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand, .nav-link {
+            color: white !important;
+            font-weight: 500;
+        }
+        
+        .nav-link {
+            margin: 0 10px;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
             position: absolute;
-            background: linear-gradient(45deg, rgba(140, 29, 64, 0.1), rgba(255, 198, 39, 0.1));
-            border-radius: 50%;
-            animation: float 20s infinite ease-in-out;
-            backdrop-filter: blur(5px);
-            box-shadow: 0 0 30px rgba(140, 29, 64, 0.1);
-        }
-
-        .floating-element:nth-child(1) {
-            width: 200px;
-            height: 200px;
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-            background: linear-gradient(45deg, rgba(140, 29, 64, 0.15), rgba(255, 198, 39, 0.15));
-        }
-
-        .floating-element:nth-child(2) {
-            width: 250px;
-            height: 250px;
-            top: 30%;
-            right: 15%;
-            animation-delay: 2s;
-            background: linear-gradient(135deg, rgba(140, 29, 64, 0.15), rgba(255, 198, 39, 0.15));
-        }
-
-        .floating-element:nth-child(3) {
-            width: 180px;
-            height: 180px;
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 4s;
-            background: linear-gradient(225deg, rgba(140, 29, 64, 0.15), rgba(255, 198, 39, 0.15));
-        }
-
-        .floating-element:nth-child(4) {
-            width: 220px;
-            height: 220px;
-            bottom: 40%;
-            right: 25%;
-            animation-delay: 6s;
-            background: linear-gradient(315deg, rgba(140, 29, 64, 0.15), rgba(255, 198, 39, 0.15));
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(0deg) scale(1);
-                box-shadow: 0 0 30px rgba(140, 29, 64, 0.1);
-            }
-            50% {
-                transform: translateY(-40px) rotate(180deg) scale(1.1);
-                box-shadow: 0 0 50px rgba(140, 29, 64, 0.2);
-            }
-            100% {
-                transform: translateY(0) rotate(360deg) scale(1);
-                box-shadow: 0 0 30px rgba(140, 29, 64, 0.1);
-            }
+            width: 0;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s ease;
         }
         
-        /* Enhanced Hero Section */
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        section {
+            padding: 80px 0;
+            position: relative;
+        }
+        
+        .section-title {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            text-align: center;
+            color: var(--dark);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            margin: 15px auto;
+            border-radius: 2px;
+        }
+        
+        /* Hero Section */
         .hero-section {
-            background: linear-gradient(135deg, var(--dark), #1a1a2e);
+            background: linear-gradient(135deg, var(--dark), #16213e);
             color: white;
-            padding: 200px 0 150px;
+            padding: 150px 0 100px;
             position: relative;
             overflow: hidden;
-            clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
         }
         
         .hero-section::before {
@@ -159,235 +139,18 @@
             width: 100%;
             height: 100%;
             background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiPjxkZWZzPjxwYXR0ZXJuIGlkPSJwYXR0ZXJuIiB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHBhdHRlcm5Vbml0cz0idXNlclNwYWNlT25Vc2UiIHBhdHRlcm5UcmFuc2Zvcm09InJvdGF0ZSg0NSkiPjxyZWN0IHdpZHRoPSIyMCIgaGVpZ2h0PSIyMCIgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjAzKSIvPjwvcGF0dGVybj48L2RlZnM+PHJlY3Qgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNwYXR0ZXJuKSIvPjwvc3ZnPg==');
-            opacity: 0.1;
+            opacity: 0.6;
         }
         
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 30px;
-            line-height: 1.2;
-            text-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .greeting {
-            display: block;
-            font-size: 1.8rem;
-            margin-bottom: 10px;
-            color: var(--gold);
-            animation: fadeIn 1s ease-out;
-        }
-
-        .welcome {
-            display: block;
-            font-size: 2rem;
-            margin-bottom: 20px;
-            color: white;
-            animation: slideIn 1s ease-out;
-        }
-
-        .name-container {
-            display: inline-block;
-            position: relative;
-            animation: floatName 4s infinite ease-in-out;
-            perspective: 1000px;
-        }
-
-        .name {
-            font-size: 3.2rem;
-            font-weight: 900;
-            background: linear-gradient(45deg, var(--gold), #fff, var(--gold));
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(255, 198, 39, 0.5);
-            position: relative;
-            z-index: 1;
-            animation: glow 2s infinite alternate, gradientFlow 4s infinite ease-in-out;
-            transform-style: preserve-3d;
-        }
-
-        .spax {
-            font-size: 3.2rem;
-            font-weight: 900;
-            background: linear-gradient(45deg, var(--primary), var(--gold), var(--primary));
-            background-size: 200% 200%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-shadow: 0 0 20px rgba(140, 29, 64, 0.5);
-            position: relative;
-            z-index: 1;
-            animation: glow 2s infinite alternate-reverse, gradientFlow 4s infinite ease-in-out reverse;
-            transform-style: preserve-3d;
-        }
-
-        .name-container::before {
-            content: '';
-            position: absolute;
-            top: -15px;
-            left: -25px;
-            right: -25px;
-            bottom: -15px;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.1), transparent);
-            border-radius: 30px;
-            z-index: 0;
-            animation: rotate 8s linear infinite, pulse 4s infinite alternate;
-            transform-style: preserve-3d;
-        }
-
-        .name-container::after {
-            content: '';
-            position: absolute;
-            top: -20px;
-            left: -30px;
-            right: -30px;
-            bottom: -20px;
-            border: 3px solid transparent;
-            border-image: linear-gradient(45deg, var(--gold), var(--primary), var(--gold)) 1;
-            border-radius: 35px;
-            z-index: 0;
-            animation: borderGlow 3s infinite alternate, rotate 12s linear infinite reverse;
-            transform-style: preserve-3d;
-        }
-
-        @keyframes floatName {
-            0% {
-                transform: translateY(0) rotate(0deg) scale(1);
-            }
-            25% {
-                transform: translateY(-15px) rotate(3deg) scale(1.02);
-            }
-            50% {
-                transform: translateY(0) rotate(0deg) scale(1);
-            }
-            75% {
-                transform: translateY(15px) rotate(-3deg) scale(0.98);
-            }
-            100% {
-                transform: translateY(0) rotate(0deg) scale(1);
-            }
-        }
-
-        @keyframes glow {
-            0% {
-                text-shadow: 0 0 10px rgba(255, 198, 39, 0.5),
-                            0 0 20px rgba(255, 198, 39, 0.3),
-                            0 0 30px rgba(255, 198, 39, 0.1);
-            }
-            100% {
-                text-shadow: 0 0 20px rgba(255, 198, 39, 0.8),
-                            0 0 40px rgba(255, 198, 39, 0.5),
-                            0 0 60px rgba(255, 198, 39, 0.2);
-            }
-        }
-
-        @keyframes gradientFlow {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-
-        @keyframes borderGlow {
-            0% {
-                box-shadow: 0 0 10px rgba(255, 198, 39, 0.3),
-                           0 0 20px rgba(140, 29, 64, 0.2);
-            }
-            100% {
-                box-shadow: 0 0 30px rgba(255, 198, 39, 0.6),
-                           0 0 50px rgba(140, 29, 64, 0.4);
-            }
-        }
-
-        @keyframes pulse {
-            0% {
-                opacity: 0.3;
-                transform: scale(0.95);
-            }
-            100% {
-                opacity: 0.6;
-                transform: scale(1.05);
-            }
-        }
-
-        @keyframes rotate {
-            0% {
-                transform: rotate(0deg) scale(1);
-            }
-            50% {
-                transform: rotate(180deg) scale(1.1);
-            }
-            100% {
-                transform: rotate(360deg) scale(1);
-            }
-        }
-
-        .greeting {
-            display: block;
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: var(--gold);
-            animation: fadeIn 1.5s ease-out, float 3s infinite ease-in-out;
-            text-shadow: 0 0 10px rgba(255, 198, 39, 0.5);
-        }
-
-        .welcome {
-            display: block;
-            font-size: 2.2rem;
-            margin-bottom: 25px;
-            color: white;
-            animation: slideIn 1.5s ease-out, float 3s infinite ease-in-out 0.5s;
-            text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
-        }
-
-        @keyframes float {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-10px);
-            }
-            100% {
-                transform: translateY(0);
-            }
-        }
-        
-        /* Enhanced Profile Image */
         .profile-image-container {
             position: relative;
-            width: 400px;
-            height: 400px;
+            width: 300px;
+            height: 300px;
             margin: 0 auto;
             border-radius: 50%;
             overflow: hidden;
-            border: 10px solid var(--gold);
-            box-shadow: 0 0 50px rgba(255, 198, 39, 0.5),
-                        inset 0 0 50px rgba(255, 255, 255, 0.3);
-            animation: profileGlow 3s infinite alternate;
-            transition: all 0.3s ease;
-        }
-        
-        .profile-image-container::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            right: -10px;
-            bottom: -10px;
-            border-radius: 50%;
-            background: linear-gradient(45deg, var(--gold), transparent);
-            z-index: -1;
-            animation: rotate 10s linear infinite;
-        }
-        
-        @keyframes rotate {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+            border: 5px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
         
         .profile-image {
@@ -397,182 +160,87 @@
             transition: transform 0.5s ease;
         }
         
-        .profile-image-container:hover {
-            transform: scale(1.05);
-            border-color: white;
-        }
-        
         .profile-image-container:hover .profile-image {
-            transform: scale(1.1);
+            transform: scale(1.05);
         }
         
-        /* Enhanced Project Cards */
-        .project-card {
-            background: rgba(255, 255, 255, 0.95);
-            border-radius: 25px;
-            padding: 50px;
-            height: 100%;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s ease;
-            text-align: center;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            position: relative;
-            overflow: hidden;
+        .hero-content {
+            padding-left: 30px;
         }
         
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2));
-            z-index: 1;
-        }
-        
-        .project-card:hover {
-            transform: translateY(-20px) scale(1.03);
-            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.2);
-            border-color: var(--gold);
-        }
-        
-        .project-icon {
-            font-size: 5rem;
-            color: var(--primary);
+        .hero-title {
+            font-size: 4rem;
+            font-weight: 700;
             margin-bottom: 30px;
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 2;
+            line-height: 1.2;
         }
         
-        .project-card:hover .project-icon {
-            transform: scale(1.2) rotate(10deg);
-            color: var(--gold);
-            text-shadow: 0 0 20px rgba(255, 198, 39, 0.5);
-        }
-        
-        /* Enhanced Section Titles */
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 40px;
-            text-align: center;
-            color: var(--dark);
-            position: relative;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            background: linear-gradient(45deg, var(--primary), var(--gold));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        .section-title::after {
-            content: '';
+        .greeting {
             display: block;
-            width: 150px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary), var(--gold));
-            margin: 20px auto;
-            border-radius: 2px;
-            box-shadow: 0 0 20px rgba(140, 29, 64, 0.3);
+            font-size: 1.5rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 300;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 10px;
         }
         
-        /* Enhanced Buttons */
-        .btn-primary {
-            background: linear-gradient(45deg, var(--primary), var(--primary-dark));
-            border: none;
-            padding: 15px 35px;
-            border-radius: 30px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
+        .welcome {
+            display: block;
+            font-size: 1.8rem;
+            font-family: 'Inter', sans-serif;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .name {
+            color: white;
             position: relative;
-            overflow: hidden;
+            display: inline-block;
         }
         
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2));
-            z-index: 1;
+        .spax {
+            color: var(--accent);
+            font-style: italic;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .btn {
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
         }
         
         .btn-primary:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(140, 29, 64, 0.3);
+            background-color: var(--primary-dark);
+            border-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
         .btn-outline {
-            border: 2px solid var(--gold);
-            color: var(--gold);
-            padding: 15px 35px;
-            border-radius: 30px;
-            font-weight: 600;
-            letter-spacing: 1px;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-outline::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, transparent, rgba(255, 198, 39, 0.1));
-            z-index: 1;
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
         }
         
         .btn-outline:hover {
-            background: var(--gold);
-            color: var(--dark);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(255, 198, 39, 0.3);
-        }
-        
-        /* Enhanced Navigation */
-        .navbar {
-            background: rgba(26, 26, 46, 0.95) !important;
-            backdrop-filter: blur(10px);
-            padding: 20px 0;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar.scrolled {
-            padding: 15px 0;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-        }
-        
-        .nav-link {
-            position: relative;
-            margin: 0 15px;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-        
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: linear-gradient(90deg, var(--primary), var(--gold));
-            transition: width 0.3s ease;
-        }
-        
-        .nav-link:hover::after {
-            width: 100%;
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
         }
         
         /* About Section */
@@ -1581,15 +1249,13 @@
                         <h1 class="hero-title">
                             <span class="greeting">Hello there!</span>
                             <span class="welcome">It's me</span>
-                            <span class="name-container">
-                                <span class="name">PraddY</span><span class="spax">SpaX</span>
-                            </span>
+                            <span class="name">PraddY</span><span class="spax">SpaX</span>
                         </h1>
                         <p class="text-white mb-4" style="font-size: 1.2rem; line-height: 1.6; max-width: 600px;">
                             Geospatial & Visualization Scientist | Water Resource Specialist | AI Enthusiast
                         </p>
                         <div class="hero-buttons">
-                            <a href="Praddy_CV_25.pdf" class="btn btn-primary" download>
+                            <a href="Praddy_CV_24.pdf" class="btn btn-primary" download>
                                 <i class="fas fa-download"></i> Download CV
                             </a>
                             <a href="https://www.linkedin.com/in/dr-pradeepika-kaushik/" class="btn btn-outline" target="_blank">
@@ -1614,9 +1280,7 @@
                     <div class="about-content">
                         <h3 class="about-title">
                             <span class="greeting">Hello there!</span>
-                            <span class="name-container">
-                                <span class="name">PraddY</span><span class="spax">SpaX</span>
-                            </span>
+                            <span class="name">It's me PraddY<span class="spax">SpaX</span></span>
                         </h3>
                         <p class="about-description">A passionate Geospatial & Visualization Scientist with expertise in water resource management, remote sensing, and innovative data visualization techniques. Dedicated to transforming complex environmental data into actionable insights through cutting-edge technology and research.</p>
                         <div class="mt-4">
@@ -1653,6 +1317,57 @@
         </div>
     </section>
 
+    <!-- Reflection & Goals Section -->
+    <section id="reflection" class="reflection-section">
+        <div class="container">
+            <h2 class="section-title">Reflection & Goals</h2>
+            
+            <div class="reflection-content">
+                <div class="reflection-card" data-aos="fade-right">
+                    <h3>Self-Reflection on My Performance This Year</h3>
+                    <div class="reflection-text">
+                        <h4>A Year of Learning and Growth</h4>
+                        <p>This year at ASU has been one of the most transformative times in my career. I've learned so much—technically, academically, and personally. Looking back at when I first joined, I can honestly say I feel proud of how far I've come.</p>
+                        
+                        <h4>Inspired by a Productive Environment</h4>
+                        <p>I feel incredibly fortunate to be part of a team where everyone is passionate and focused on their work. The energy here is contagious—it motivates me every day. My professor has been extremely supportive, and the overall environment helps me stay creative and driven.</p>
+                        
+                        <h4>Building My Own Ideas into Reality</h4>
+                        <p>I've started developing some of my own apps, including the AI River Analyzer Morphology Analyzer. It's exciting to see my ideas take shape and move closer to becoming real tools that others can use.</p>
+                        
+                        <h4>Gaining Confidence in My Path</h4>
+                        <p>This year gave me clarity. I now feel more confident in my skills, more sure of the kind of research I want to do, and excited about the tools I'm building. I'm really happy I chose this path—it's already making a difference.</p>
+                    </div>
+                </div>
+
+                <div class="goals-card" data-aos="fade-left">
+                    <h3>Career Goals Statement</h3>
+                    <div class="goals-text">
+                        <div class="goal-item">
+                            <h4>Research That Makes an Impact</h4>
+                            <p>I want to keep working at the intersection of geospatial science, AI, and environmental research. My goal is to create tools and insights that can actually help communities and researchers understand complex systems like rivers and climate.</p>
+                        </div>
+                        
+                        <div class="goal-item">
+                            <h4>Finish and Launch My Own Tools</h4>
+                            <p>I'm currently working on apps that are close to my heart—especially the River Analyzer. In the next phase of my journey, I want to polish and launch these tools so they can be used in real-world scenarios.</p>
+                        </div>
+                        
+                        <div class="goal-item">
+                            <h4>Write and Share What I'm Learning</h4>
+                            <p>I'm working on research papers that reflect the projects and challenges I've been tackling. Publishing these will help me contribute back to the research community and start meaningful conversations.</p>
+                        </div>
+                        
+                        <div class="goal-item">
+                            <h4>Keep Growing and Collaborating</h4>
+                            <p>Long-term, I want to lead and collaborate on interdisciplinary projects that combine science, tech, and design. I'm excited to keep learning, mentoring others, and building solutions that really matter.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Documents Section -->
     <section id="documents" class="documents-section">
         <div class="container">
@@ -1665,7 +1380,7 @@
                         </div>
                         <h3>Curriculum Vitae</h3>
                         <p>Up-to-date CV highlighting my professional journey, skills, and achievements (5 pages)</p>
-                        <a href="Praddy_CV_25.pdf" class="btn btn-primary" download>
+                        <a href="Praddy_CV_24.pdf" class="btn btn-primary" download>
                             <i class="fas fa-download"></i> Download CV
                         </a>
                     </div>
@@ -1677,7 +1392,7 @@
                         </div>
                         <h3>Self-Reflection</h3>
                         <p>Personal assessment of my performance and growth this year (1 page)</p>
-                        <a href="Self Reflection_Performance.pdf" class="btn btn-primary" download>
+                        <a href="self_reflection.pdf" class="btn btn-primary" download>
                             <i class="fas fa-download"></i> Download Reflection
                         </a>
                     </div>
@@ -1689,7 +1404,7 @@
                         </div>
                         <h3>Career Goals</h3>
                         <p>Statement outlining my professional aspirations and future objectives (1 page)</p>
-                        <a href="CAREER GOALS STATEMENT.pdf" class="btn btn-primary" download>
+                        <a href="career_goals.pdf" class="btn btn-primary" download>
                             <i class="fas fa-download"></i> Download Goals
                         </a>
                     </div>
@@ -1892,43 +1607,313 @@
         <div class="container">
             <h2 class="section-title" data-aos="fade-up">Featured Projects</h2>
             
-            <div class="row">
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-chart-line"></i>
+            <!-- Featured Project - CRB Flow Dashboard -->
+            <div class="featured-project" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="project-card featured">
+                            <div class="project-image">
+                                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="CRB Flow Dashboard">
+                                <div class="project-overlay">
+                                    <a href="https://pradioncrbflow.streamlit.app/" target="_blank" class="project-preview">
+                                        <i class="fas fa-external-link-alt"></i> Live Demo
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="project-content">
+                                <h3>CRB Flow Dashboard</h3>
+                                <p class="project-description">An interactive Streamlit dashboard for real-time Colorado River Basin flow analysis. This project combines geospatial data visualization with advanced hydrological modeling to provide insights into water resource management.</p>
+                                <div class="project-features">
+                                    <div class="feature">
+                                        <i class="fas fa-chart-line"></i>
+                                        <span>Real-time Data Analysis</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-map-marked-alt"></i>
+                                        <span>Interactive Maps</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-water"></i>
+                                        <span>Hydrological Modeling</span>
+                                    </div>
+                                    <div class="feature">
+                                        <i class="fas fa-database"></i>
+                                        <span>Geospatial Analysis</span>
+                                    </div>
+                                </div>
+                                <div class="project-tags">
+                                    <span>Streamlit</span>
+                                    <span>Python</span>
+                                    <span>Data Visualization</span>
+                                    <span>Geospatial Analysis</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://pradioncrbflow.streamlit.app/" class="project-link" target="_blank">
+                                        <i class="fas fa-external-link-alt"></i> View Live Demo
+                                    </a>
+                                    <a href="https://github.com/Praddy-GByte/crb_dashboard" class="project-link github" target="_blank">
+                                        <i class="fab fa-github"></i> View Code
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <h3>CRB Flow Dashboard</h3>
-                        <p>Interactive Streamlit dashboard for real-time Colorado River Basin flow analysis.</p>
-                        <a href="https://pradioncrbflow.streamlit.app/" class="btn btn-primary" target="_blank">
-                            <i class="fas fa-external-link-alt"></i> View Project
-                        </a>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="project-stats">
+                            <div class="stat-card">
+                                <i class="fas fa-users"></i>
+                                <h4>Active Users</h4>
+                                <p>100+</p>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-chart-bar"></i>
+                                <h4>Data Points</h4>
+                                <p>10,000+</p>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-map"></i>
+                                <h4>Coverage</h4>
+                                <p>Colorado River Basin</p>
+                            </div>
+                            <div class="stat-card">
+                                <i class="fas fa-code-branch"></i>
+                                <h4>Contributors</h4>
+                                <p>5+</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-water"></i>
+            </div>
+
+            <!-- Project Categories Tabs -->
+            <div class="project-categories" data-aos="fade-up">
+                <button class="category-tab active" data-category="all">All Projects</button>
+                <button class="category-tab" data-category="web">Web Development</button>
+                <button class="category-tab" data-category="gis">GIS & Geospatial</button>
+                <button class="category-tab" data-category="data">Data Analysis</button>
+                <button class="category-tab" data-category="research">Research Projects</button>
+            </div>
+
+            <div class="projects-container">
+                <!-- Web Development Projects -->
+                <div class="project-category" data-category="web">
+                    <div class="row">
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Web Development Projects">
+                                </div>
+                                <div class="project-content">
+                                    <h3>Web Development Projects</h3>
+                                    <p>Collection of web applications including React, Node.js, and Socket.io implementations for various geospatial and data visualization needs.</p>
+                                    <div class="project-tags">
+                                        <span>React</span>
+                                        <span>Node.js</span>
+                                        <span>WebSocket</span>
+                                        <span>GIS</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte?tab=repositories" class="project-link" target="_blank">View Repositories</a>
+                                </div>
+                            </div>
                         </div>
-                        <h3>River Morphology Analyzer</h3>
-                        <p>AI-powered system for analyzing river morphology and patterns.</p>
-                        <a href="https://github.com/Praddy-GByte/AI_AnalyzerRiverMorphology" class="btn btn-primary" target="_blank">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1627398242454-45a1465c2479?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Strapi Cloud Project">
+                                </div>
+                                <div class="project-content">
+                                    <h3>Strapi Cloud Project</h3>
+                                    <p>Headless CMS implementation with Strapi for content management in geospatial applications with custom API endpoints.</p>
+                                    <div class="project-tags">
+                                        <span>JavaScript</span>
+                                        <span>Strapi</span>
+                                        <span>CMS</span>
+                                        <span>API</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte/strapi-cloud" class="project-link" target="_blank">View Repository</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1517430816045-df4b7de11d1d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Socket.io Project">
+                                </div>
+                                <div class="project-content">
+                                    <h3>Socket.io Project</h3>
+                                    <p>Real-time communication implementation using Socket.io for live data streaming in environmental monitoring applications.</p>
+                                    <div class="project-tags">
+                                        <span>JavaScript</span>
+                                        <span>Socket.io</span>
+                                        <span>WebSocket</span>
+                                        <span>Real-time</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte/socket.io_project" class="project-link" target="_blank">View Repository</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="project-card">
-                        <div class="project-icon">
-                            <i class="fas fa-map-marked-alt"></i>
+
+                <!-- GIS & Geospatial Projects -->
+                <div class="project-category" data-category="gis">
+                    <div class="row">
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1581093450021-4a7360e9a9e5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Basin Analysis Tools">
+                                </div>
+                                <div class="project-content">
+                                    <h3>Basin Analysis Tools</h3>
+                                    <p>Geospatial analysis tools using ArcPy for basin and watershed analysis with automated workflow capabilities.</p>
+                                    <div class="project-tags">
+                                        <span>Python</span>
+                                        <span>ArcPy</span>
+                                        <span>GIS</span>
+                                        <span>Automation</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte/basin_analysis_arcpy" class="project-link" target="_blank">View Repository</a>
+                                </div>
+                            </div>
                         </div>
-                        <h3>Geospatial Analysis Tools</h3>
-                        <p>Collection of geospatial analysis tools using ArcPy and Python.</p>
-                        <a href="https://github.com/Praddy-GByte/basin_analysis_arcpy" class="btn btn-primary" target="_blank">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1569336416962-2a5b6f45b58b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Geospatial Projects">
+                                </div>
+                                <div class="project-content">
+                                    <h3>Geospatial Projects</h3>
+                                    <p>Collection of geospatial analysis and visualization projects with interactive mapping components.</p>
+                                    <div class="project-tags">
+                                        <span>GIS</span>
+                                        <span>Remote Sensing</span>
+                                        <span>JavaScript</span>
+                                        <span>Mapping</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte/Geospatial_code" class="project-link" target="_blank">View Repository</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1581092918056-0c4c3acd3789?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Flood Mapping System">
+                                </div>
+                                <div class="project-content">
+                                    <h3>Flood Mapping System</h3>
+                                    <p>Automated flood mapping system using SAR and optical satellite data with change detection capabilities.</p>
+                                    <div class="project-tags">
+                                        <span>Python</span>
+                                        <span>Remote Sensing</span>
+                                        <span>SAR</span>
+                                        <span>GIS</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte/flood_mapping" class="project-link" target="_blank">View Repository</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Data Analysis Projects -->
+                <div class="project-category" data-category="data">
+                    <div class="row">
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="R Projects">
+                                </div>
+                                <div class="project-content">
+                                    <h3>R Projects</h3>
+                                    <p>Data analysis and visualization projects using R for statistical analysis and scientific computing.</p>
+                                    <div class="project-tags">
+                                        <span>R</span>
+                                        <span>Data Analysis</span>
+                                        <span>Visualization</span>
+                                        <span>Statistics</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte?tab=repositories" class="project-link" target="_blank">View Repositories</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="Python Data Analysis">
+                                </div>
+                                <div class="project-content">
+                                    <h3>Python Data Analysis</h3>
+                                    <p>Collection of Python scripts for geospatial and environmental data analysis and visualization.</p>
+                                    <div class="project-tags">
+                                        <span>Python</span>
+                                        <span>Pandas</span>
+                                        <span>Matplotlib</span>
+                                        <span>Data Science</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte/python_data_analysis" class="project-link" target="_blank">View Repository</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Research Projects -->
+                <div class="project-category" data-category="research">
+                    <div class="row">
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="AI River Morphology Analyzer">
+                                </div>
+                                <div class="project-content">
+                                    <h3>AI River Morphology Analyzer</h3>
+                                    <p>Python-based AI system for analyzing river morphology and patterns using machine learning techniques.</p>
+                                    <div class="project-tags">
+                                        <span>Python</span>
+                                        <span>AI/ML</span>
+                                        <span>Geospatial Analysis</span>
+                                        <span>Hydrology</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte/AI_AnalyzerRiverMorphology" class="project-link" target="_blank">View Repository</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1509391366360-2e959784a276?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="CHI Project">
+                                </div>
+                                <div class="project-content">
+                                    <h3>CHI Project</h3>
+                                    <p>R-based project for Center for Hydrologic Innovations research with advanced hydrological modeling.</p>
+                                    <div class="project-tags">
+                                        <span>R</span>
+                                        <span>Hydrology</span>
+                                        <span>Research</span>
+                                        <span>Modeling</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte/CHI_Project" class="project-link" target="_blank">View Repository</a>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                            <div class="project-card">
+                                <div class="project-image">
+                                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80" alt="MaCRIA Project">
+                                </div>
+                                <div class="project-content">
+                                    <h3>MaCRIA Project</h3>
+                                    <p>R-based analysis and visualization tools for MaCRIA research on climate change impacts.</p>
+                                    <div class="project-tags">
+                                        <span>R</span>
+                                        <span>Data Analysis</span>
+                                        <span>Research</span>
+                                        <span>Climate</span>
+                                    </div>
+                                    <a href="https://github.com/Praddy-GByte/R_MaCRIA" class="project-link" target="_blank">View Repository</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
