@@ -510,33 +510,69 @@
         /* Reflection & Goals Section */
         .reflection-section {
             background-color: #f8f9fa;
+            padding: 100px 0;
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .reflection-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.05), rgba(0, 180, 216, 0.05));
+            z-index: 0;
+        }
+
         .reflection-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 30px;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
         }
         
         .reflection-card, .goals-card {
             background-color: white;
-            border-radius: 10px;
-            padding: 30px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+            position: relative;
+            overflow: hidden;
         }
-        
+
+        .reflection-card::before, .goals-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
         .reflection-card:hover, .goals-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .reflection-card:hover::before, .goals-card:hover::before {
+            opacity: 1;
         }
         
         .reflection-card h3, .goals-card h3 {
-            color: var(--primary);
-            margin-bottom: 20px;
-            font-size: 1.5rem;
+            color: var(--text);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
+            font-weight: 500;
         }
         
         .reflection-card h3::after, .goals-card h3::after {
@@ -544,35 +580,85 @@
             position: absolute;
             bottom: 0;
             left: 0;
-            width: 50px;
+            width: 60px;
             height: 3px;
-            background-color: var(--accent);
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            border-radius: 3px;
         }
         
         .reflection-text h4 {
-            color: var(--dark);
-            margin: 20px 0 10px;
-            font-size: 1.2rem;
+            color: var(--text);
+            margin: 30px 0 15px;
+            font-size: 1.3rem;
+            font-weight: 500;
+            position: relative;
+            padding-left: 25px;
+        }
+
+        .reflection-text h4::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+            font-size: 1.5rem;
         }
         
         .reflection-text p {
             line-height: 1.8;
             color: var(--text-light);
+            margin-bottom: 20px;
+            padding-left: 25px;
+            position: relative;
         }
         
         .goal-item {
-            margin-bottom: 25px;
+            margin-bottom: 35px;
+            padding-left: 25px;
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .goal-item:hover {
+            transform: translateX(10px);
         }
         
         .goal-item h4 {
-            color: var(--dark);
-            margin-bottom: 10px;
+            color: var(--text);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+            font-weight: 500;
+            position: relative;
+        }
+
+        .goal-item h4::before {
+            content: '→';
+            position: absolute;
+            left: -25px;
+            color: var(--primary);
             font-size: 1.2rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .goal-item:hover h4::before {
+            opacity: 1;
+            left: -20px;
         }
         
         .goal-item p {
             line-height: 1.8;
             color: var(--text-light);
+            margin-bottom: 0;
+        }
+
+        @media (max-width: 992px) {
+            .reflection-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .reflection-card, .goals-card {
+                padding: 30px;
+            }
         }
         
         /* Documents Section */
