@@ -623,42 +623,130 @@ body::before {
 /* About Section */
 .about-section {
     padding: 5rem 0;
-    background-color: var(--light-bg);
+    background: linear-gradient(135deg, #f5f7fa 0%, #e4e8eb 100%);
 }
 
 .about-content {
-    background: white;
     padding: 2rem;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    background: white;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.about-title {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 2rem;
+    line-height: 1.2;
+}
+
+.greeting {
+    display: block;
+    color: #333;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease forwards;
+}
+
+.name {
+    display: inline-block;
+    color: #333;
+    position: relative;
+    animation: fadeInUp 1s ease forwards 0.5s;
+}
+
+.name .spax {
+    background: linear-gradient(45deg, #ff3366, #ff6b6b, #ff8e8e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradientFlow 3s ease infinite, float 3s ease-in-out infinite;
+    text-shadow: 0 0 10px rgba(255,51,102,0.3);
+}
+
+.about-description {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease forwards 1s;
 }
 
 .stats-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    padding: 2rem;
 }
 
 .stat-item {
     background: white;
     padding: 2rem;
-    border-radius: 20px;
-    box-shadow: var(--card-shadow);
+    border-radius: 15px;
     text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
+    animation: fadeInUp 1s ease forwards;
 }
 
 .stat-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--hover-shadow);
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
 }
 
-.stat-item h3 {
-    font-size: 3rem;
-    background: var(--gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    margin-bottom: 1rem;
+.stat-number {
+    display: block;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 0.5rem;
+    animation: countUp 1s ease forwards;
+}
+
+.stat-label {
+    display: block;
+    font-size: 1rem;
+    color: #666;
+    font-weight: 500;
+}
+
+@keyframes countUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .about-title {
+        font-size: 3rem;
+    }
+    
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .about-title {
+        font-size: 2.5rem;
+    }
+    
+    .stats-container {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat-item {
+        padding: 1.5rem;
+    }
+    
+    .stat-number {
+        font-size: 2rem;
+    }
 }
 
 /* Skills Section */
