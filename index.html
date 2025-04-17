@@ -485,8 +485,52 @@
             color: var(--secondary);
             position: relative;
             display: inline-block;
-            animation: glow 2s ease-in-out infinite alternate;
+            animation: blink 1s infinite, glow 2s ease-in-out infinite alternate;
             text-shadow: 0 0 10px rgba(140, 29, 64, 0.8);
+        }
+        
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+        
+        .sticker {
+            position: absolute;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transform: rotate(-5deg);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            z-index: 1;
+        }
+        
+        .sticker-new {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            top: 10px;
+            right: 10px;
+        }
+        
+        .sticker-featured {
+            background: linear-gradient(135deg, #ff6b6b, #ff8e8e);
+            color: white;
+            top: 10px;
+            left: 10px;
+        }
+        
+        .sticker-popular {
+            background: linear-gradient(135deg, #4CAF50, #45a049);
+            color: white;
+            bottom: 10px;
+            right: 10px;
+        }
+        
+        .sticker-trending {
+            background: linear-gradient(135deg, #2196F3, #1976D2);
+            color: white;
+            bottom: 10px;
+            left: 10px;
         }
         
         @keyframes glow {
@@ -1485,6 +1529,7 @@
                     <div class="about-content">
                         <h3 class="about-title">
                             <span class="name">It's me</span>
+                            <span class="sticker sticker-new">NEW</span>
                         </h3>
                         <p class="about-description">A passionate Geospatial & Visualization Scientist with expertise in water resource management, remote sensing, and innovative data visualization techniques. Dedicated to transforming complex environmental data into actionable insights through cutting-edge technology and research.</p>
                       
@@ -1817,6 +1862,7 @@
                                     </a>
                                 </div>
                             </div>
+                            <span class="sticker sticker-featured">FEATURED</span>
                         </div>
                     </div>
                     <div class="col-lg-4">
@@ -2087,6 +2133,7 @@
                                         </div>
                                         <a href="https://github.com/Praddy-GByte/AI_AnalyzerRiverMorphology" class="github-link" target="_blank">View Repository</a>
                                     </div>
+                                    <span class="sticker sticker-popular">POPULAR</span>
                                 </div>
                             </div>
                             <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
@@ -2231,6 +2278,7 @@
                             <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
                             <a href="#" target="_blank"><i class="fab fa-researchgate"></i></a>
                         </div>
+                        <span class="sticker sticker-trending">TRENDING</span>
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
