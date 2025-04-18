@@ -2957,12 +2957,24 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-                radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
-                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px);
-            background-size: 550px 550px, 350px 350px, 250px 250px;
-            background-position: 0 0, 40px 60px, 130px 270px;
+                radial-gradient(white, rgba(255,255,255,.3) 2px, transparent 40px),
+                radial-gradient(white, rgba(255,255,255,.2) 1px, transparent 30px),
+                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+                radial-gradient(white, rgba(255,255,255,.05) 1px, transparent 20px);
+            background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
+            background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
             animation: universe 20s linear infinite;
+        }
+
+        .universe-background::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.7) 100%);
+            pointer-events: none;
         }
 
         @keyframes universe {
@@ -2972,6 +2984,59 @@
             to {
                 transform: translateY(550px);
             }
+        }
+
+        /* Shooting Stars */
+        .shooting-star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            box-shadow: 0 0 0 4px rgba(255,255,255,0.1),
+                        0 0 0 8px rgba(255,255,255,0.1),
+                        0 0 20px rgba(255,255,255,0.2);
+            animation: shooting 3s linear infinite;
+        }
+
+        .shooting-star::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 100px;
+            height: 1px;
+            background: linear-gradient(90deg, rgba(255,255,255,0.8), transparent);
+        }
+
+        @keyframes shooting {
+            0% {
+                transform: translateX(0) translateY(0) rotate(45deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateX(1000px) translateY(-1000px) rotate(45deg);
+                opacity: 0;
+            }
+        }
+
+        /* Add some random shooting stars */
+        .shooting-star:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .shooting-star:nth-child(2) {
+            top: 40%;
+            left: 20%;
+            animation-delay: 1s;
+        }
+
+        .shooting-star:nth-child(3) {
+            top: 60%;
+            left: 30%;
+            animation-delay: 2s;
         }
     </style>
 </head>
@@ -2997,6 +3062,9 @@
 
     <!-- Hero Section -->
     <section id="hero" class="hero-section universe-background">
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4 text-center" data-aos="fade-right">
