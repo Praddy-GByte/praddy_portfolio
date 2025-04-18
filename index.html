@@ -282,17 +282,26 @@
             box-shadow: 0 0 30px rgba(255, 255, 255, 0.8),
                         0 0 60px rgba(255, 255, 255, 0.6),
                         0 0 90px rgba(255, 255, 255, 0.4);
-            animation: float 6s ease-in-out infinite;
             background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
             padding: 3px;
+            animation: shine 3s ease-in-out infinite;
         }
 
-        @keyframes float {
-            0%, 100% {
-                transform: translateY(0);
+        @keyframes shine {
+            0% {
+                box-shadow: 0 0 30px rgba(255, 255, 255, 0.8),
+                            0 0 60px rgba(255, 255, 255, 0.6),
+                            0 0 90px rgba(255, 255, 255, 0.4);
             }
             50% {
-                transform: translateY(-10px);
+                box-shadow: 0 0 40px rgba(255, 255, 255, 0.9),
+                            0 0 70px rgba(255, 255, 255, 0.7),
+                            0 0 100px rgba(255, 255, 255, 0.5);
+            }
+            100% {
+                box-shadow: 0 0 30px rgba(255, 255, 255, 0.8),
+                            0 0 60px rgba(255, 255, 255, 0.6),
+                            0 0 90px rgba(255, 255, 255, 0.4);
             }
         }
         
