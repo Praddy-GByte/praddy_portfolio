@@ -2942,7 +2942,7 @@
             animation: blink 1s infinite;
         }
 
-        /* Universe Background */
+        /* Enhanced Universe Background */
         .universe-background {
             background: linear-gradient(135deg, #000000 0%, #1a1a2e 100%);
             position: relative;
@@ -2957,12 +2957,12 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(white, rgba(255,255,255,.3) 2px, transparent 40px),
-                radial-gradient(white, rgba(255,255,255,.2) 1px, transparent 30px),
-                radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
-                radial-gradient(white, rgba(255,255,255,.05) 1px, transparent 20px);
-            background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px;
-            background-position: 0 0, 40px 60px, 130px 270px, 70px 100px;
+                radial-gradient(white, rgba(255,255,255,.4) 1px, transparent 2px),
+                radial-gradient(white, rgba(255,255,255,.3) 1px, transparent 2px),
+                radial-gradient(white, rgba(255,255,255,.2) 1px, transparent 2px),
+                radial-gradient(white, rgba(255,255,255,.1) 1px, transparent 2px);
+            background-size: 200px 200px, 300px 300px, 400px 400px, 500px 500px;
+            background-position: 0 0, 100px 100px, 200px 200px, 300px 300px;
             animation: universe 20s linear infinite;
         }
 
@@ -2973,7 +2973,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.7) 100%);
+            background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.5) 100%);
             pointer-events: none;
         }
 
@@ -2982,11 +2982,11 @@
                 transform: translateY(0);
             }
             to {
-                transform: translateY(550px);
+                transform: translateY(500px);
             }
         }
 
-        /* Shooting Stars */
+        /* Enhanced Shooting Stars */
         .shooting-star {
             position: absolute;
             width: 2px;
@@ -3004,7 +3004,7 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 100px;
+            width: 150px;
             height: 1px;
             background: linear-gradient(90deg, rgba(255,255,255,0.8), transparent);
         }
@@ -3020,24 +3020,68 @@
             }
         }
 
-        /* Add some random shooting stars */
+        /* Add more shooting stars with different positions and delays */
         .shooting-star:nth-child(1) {
-            top: 20%;
-            left: 10%;
+            top: 10%;
+            left: 5%;
             animation-delay: 0s;
         }
 
         .shooting-star:nth-child(2) {
-            top: 40%;
-            left: 20%;
+            top: 20%;
+            left: 15%;
             animation-delay: 1s;
         }
 
         .shooting-star:nth-child(3) {
-            top: 60%;
-            left: 30%;
+            top: 30%;
+            left: 25%;
             animation-delay: 2s;
         }
+
+        .shooting-star:nth-child(4) {
+            top: 40%;
+            left: 35%;
+            animation-delay: 3s;
+        }
+
+        .shooting-star:nth-child(5) {
+            top: 50%;
+            left: 45%;
+            animation-delay: 4s;
+        }
+
+        .shooting-star:nth-child(6) {
+            top: 60%;
+            left: 55%;
+            animation-delay: 5s;
+        }
+
+        /* Add twinkling effect to some stars */
+        @keyframes twinkle {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .twinkling-star {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 2s ease-in-out infinite;
+        }
+
+        /* Add multiple twinkling stars */
+        .twinkling-star:nth-child(1) { top: 15%; left: 20%; animation-delay: 0s; }
+        .twinkling-star:nth-child(2) { top: 25%; left: 40%; animation-delay: 0.5s; }
+        .twinkling-star:nth-child(3) { top: 35%; left: 60%; animation-delay: 1s; }
+        .twinkling-star:nth-child(4) { top: 45%; left: 80%; animation-delay: 1.5s; }
+        .twinkling-star:nth-child(5) { top: 55%; left: 30%; animation-delay: 2s; }
     </style>
 </head>
 <body>
@@ -3065,6 +3109,14 @@
         <div class="shooting-star"></div>
         <div class="shooting-star"></div>
         <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="twinkling-star"></div>
+        <div class="twinkling-star"></div>
+        <div class="twinkling-star"></div>
+        <div class="twinkling-star"></div>
+        <div class="twinkling-star"></div>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4 text-center" data-aos="fade-right">
