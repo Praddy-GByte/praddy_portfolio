@@ -278,33 +278,21 @@
             margin: 0 auto;
             border-radius: 50%;
             overflow: hidden;
-            border: 3px solid #FFC627; /* ASU Gold */
-            box-shadow: 0 0 20px rgba(255, 198, 39, 0.5), /* Gold glow */
-                        0 0 40px rgba(255, 198, 39, 0.3),
-                        0 0 60px rgba(255, 198, 39, 0.2);
-            animation: float 6s ease-in-out infinite, pulse 4s ease-in-out infinite;
-            background: linear-gradient(135deg, #FFC627, #FFC627); /* Gold gradient */
-            padding: 3px; /* Space for the border */
+            border: 3px solid rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.8),
+                        0 0 60px rgba(255, 255, 255, 0.6),
+                        0 0 90px rgba(255, 255, 255, 0.4);
+            animation: float 6s ease-in-out infinite;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.7));
+            padding: 3px;
         }
 
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 20px rgba(255, 198, 39, 0.5),
-                            0 0 40px rgba(255, 198, 39, 0.3),
-                            0 0 60px rgba(255, 198, 39, 0.2);
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
             }
             50% {
-                transform: scale(1.05);
-                box-shadow: 0 0 30px rgba(255, 198, 39, 0.6),
-                            0 0 50px rgba(255, 198, 39, 0.4),
-                            0 0 70px rgba(255, 198, 39, 0.3);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 20px rgba(255, 198, 39, 0.5),
-                            0 0 40px rgba(255, 198, 39, 0.3),
-                            0 0 60px rgba(255, 198, 39, 0.2);
+                transform: translateY(-10px);
             }
         }
         
@@ -1704,11 +1692,9 @@
             background-image: 
                 radial-gradient(white, rgba(255,255,255,.6) 1px, transparent 2px),
                 radial-gradient(white, rgba(255,255,255,.4) 1px, transparent 2px),
-                radial-gradient(white, rgba(255,255,255,.3) 1px, transparent 2px),
-                radial-gradient(white, rgba(255,255,255,.2) 1px, transparent 2px),
-                radial-gradient(white, rgba(255,255,255,.1) 1px, transparent 2px);
-            background-size: 150px 150px, 250px 250px, 350px 350px, 450px 450px, 550px 550px;
-            background-position: 0 0, 50px 50px, 100px 100px, 150px 150px, 200px 200px;
+                radial-gradient(white, rgba(255,255,255,.3) 1px, transparent 2px);
+            background-size: 150px 150px, 250px 250px, 350px 350px;
+            background-position: 0 0, 50px 50px, 100px 100px;
             animation: universe 15s linear infinite;
         }
 
@@ -1734,47 +1720,8 @@
 
         /* Enhanced Shooting Stars */
         .shooting-star {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: white;
-            border-radius: 50%;
-            box-shadow: 0 0 0 4px rgba(255,255,255,0.2),
-                        0 0 0 8px rgba(255,255,255,0.1),
-                        0 0 20px rgba(255,255,255,0.3);
-            animation: shooting 2.5s linear infinite;
+            display: none;
         }
-
-        .shooting-star::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 200px;
-            height: 1px;
-            background: linear-gradient(90deg, rgba(255,255,255,0.9), transparent);
-        }
-
-        @keyframes shooting {
-            0% {
-                transform: translateX(0) translateY(0) rotate(45deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateX(1200px) translateY(-1200px) rotate(45deg);
-                opacity: 0;
-            }
-        }
-
-        /* Add more shooting stars with different positions and delays */
-        .shooting-star:nth-child(1) { top: 5%; left: 5%; animation-delay: 0s; }
-        .shooting-star:nth-child(2) { top: 15%; left: 15%; animation-delay: 0.5s; }
-        .shooting-star:nth-child(3) { top: 25%; left: 25%; animation-delay: 1s; }
-        .shooting-star:nth-child(4) { top: 35%; left: 35%; animation-delay: 1.5s; }
-        .shooting-star:nth-child(5) { top: 45%; left: 45%; animation-delay: 2s; }
-        .shooting-star:nth-child(6) { top: 55%; left: 55%; animation-delay: 2.5s; }
-        .shooting-star:nth-child(7) { top: 65%; left: 65%; animation-delay: 3s; }
-        .shooting-star:nth-child(8) { top: 75%; left: 75%; animation-delay: 3.5s; }
 
         /* Enhanced Twinkling Stars */
         @keyframes twinkle {
@@ -1820,8 +1767,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#research">Research</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
+
                     <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
                     <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
                 </ul>
