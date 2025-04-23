@@ -1763,6 +1763,53 @@
         .twinkling-star:nth-child(6) { top: 60%; left: 40%; animation-delay: 1s; }
         .twinkling-star:nth-child(7) { top: 70%; left: 60%; animation-delay: 1.2s; }
         .twinkling-star:nth-child(8) { top: 80%; left: 80%; animation-delay: 1.4s; }
+
+        .skill-tag {
+            display: inline-block;
+            padding: 5px 15px;
+            margin: 5px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .tech-stack {
+            line-height: 2;
+            color: var(--text);
+            font-size: 0.95rem;
+            background: rgba(140, 29, 64, 0.05);
+            padding: 15px;
+            border-radius: 10px;
+            border-left: 4px solid var(--accent);
+        }
+
+        .professional-highlights h4, .technical-expertise h4 {
+            color: var(--secondary);
+            font-size: 1.2rem;
+            font-weight: 600;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .professional-highlights h4:before, .technical-expertise h4:before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 4px;
+            height: 20px;
+            background: var(--primary);
+            border-radius: 2px;
+        }
     </style>
 </head>
 <body>
@@ -1842,32 +1889,171 @@
                 <div class="col-lg-6" data-aos="fade-right">
                     <div class="about-content">
                         <h3 class="about-title">
-                            <span class="name">It's me</span>
+                            <span class="name">Remote Sensing & Geo-Data Specialist</span>
                             <span class="sticker sticker-new">NEW</span>
                         </h3>
-                        <p class="about-description">A passionate Geospatial & Visualization Scientist with expertise in water resource management, remote sensing, and innovative data visualization techniques. Dedicated to transforming complex environmental data into actionable insights through cutting-edge technology and research.</p>
-                      
+                        <p class="about-description">Expert in geospatial data analysis, AI-driven hydrological modeling, and full-stack software development. Transforming hydro-environmental data into actionable insights through advanced visualization tools, interactive dashboards, and scalable cloud-based solutions.</p>
+                        
+                        <div class="professional-highlights mt-4">
+                            <h4 class="mb-3">Professional Skills:</h4>
+                            <p class="skill-tag">Project Management</p>
+                            <p class="skill-tag">Team Leadership</p>
+                            <p class="skill-tag">Communication</p>
+                            <p class="skill-tag">Problem-solving</p>
+                            <p class="skill-tag">Collaboration</p>
+                            <p class="skill-tag">Open to New Ideas</p>
+                        </div>
+
+                        <div class="technical-expertise mt-4">
+                            <h4 class="mb-3">Technical Expertise:</h4>
+                            <p class="tech-stack">
+                                HTML5 | CSS | Express.js | Python | Node.js | Bootstrap | DOM | API | React | SQL | PostGIS | JavaScript |
+                                Geospatial data analysis | Database | Web Framework | UI/UI Scripting
+                            </p>
+                        </div>
+
+                        <style>
+                            .skill-tag {
+                                display: inline-block;
+                                padding: 5px 15px;
+                                margin: 5px;
+                                background: linear-gradient(135deg, var(--primary), var(--accent));
+                                color: white;
+                                border-radius: 20px;
+                                font-size: 0.9rem;
+                                box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+                                transition: all 0.3s ease;
+                            }
+                            
+                            .skill-tag:hover {
+                                transform: translateY(-2px);
+                                box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+                            }
+
+                            .tech-stack {
+                                line-height: 2;
+                                color: var(--text);
+                                font-size: 0.95rem;
+                                background: rgba(140, 29, 64, 0.05);
+                                padding: 15px;
+                                border-radius: 10px;
+                                border-left: 4px solid var(--accent);
+                            }
+
+                            .professional-highlights h4, .technical-expertise h4 {
+                                color: var(--secondary);
+                                font-size: 1.2rem;
+                                font-weight: 600;
+                                position: relative;
+                                padding-left: 15px;
+                            }
+
+                            .professional-highlights h4:before, .technical-expertise h4:before {
+                                content: '';
+                                position: absolute;
+                                left: 0;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                width: 4px;
+                                height: 20px;
+                                background: var(--primary);
+                                border-radius: 2px;
+                            }
+                        </style>
                     </div>
                 </div>
                 <div class="col-lg-6" data-aos="fade-left">
-                    <div class="stats-container">
-                        <div class="stat-item">
-                            <span class="stat-number">8+</span>
-                            <span class="stat-label">Years Experience</span>
+                    <div class="education-timeline">
+                        <h4 class="mb-4">Educational Background</h4>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h5>Geospatial & Data Visualization Scientist</h5>
+                                <p class="institution">Post-Doc, ASU-Tempe</p>
+                                <p class="year">2024-Present</p>
+                            </div>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number">15+</span>
-                            <span class="stat-label">Projects</span>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h5>Doctor of Philosophy (Ph.D.)</h5>
+                                <p class="institution">Banarus Hindu University, India</p>
+                                <p class="year">2015-2024</p>
+                            </div>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number">10+</span>
-                            <span class="stat-label">Publications</span>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h5>Master of Science (M.Sc)</h5>
+                                <p class="institution">Aligarh Muslim University, India</p>
+                                <p class="year">2009-2011</p>
+                            </div>
                         </div>
-                        <div class="stat-item">
-                            <span class="stat-number">5+</span>
-                            <span class="stat-label">Programming Languages</span>
+                        <div class="timeline-item">
+                            <div class="timeline-content">
+                                <h5>Bachelor in Science (B.Sc.)</h5>
+                                <p class="institution">Aligarh Muslim University, India</p>
+                                <p class="year">2006-2009</p>
+                            </div>
                         </div>
                     </div>
+
+                    <style>
+                        .education-timeline {
+                            padding: 20px;
+                            background: white;
+                            border-radius: 10px;
+                            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+                        }
+
+                        .education-timeline h4 {
+                            color: var(--secondary);
+                            font-size: 1.3rem;
+                            margin-bottom: 25px;
+                            padding-bottom: 10px;
+                            border-bottom: 2px solid var(--primary);
+                        }
+
+                        .timeline-item {
+                            padding: 15px;
+                            margin-bottom: 15px;
+                            border-left: 3px solid var(--primary);
+                            position: relative;
+                            transition: all 0.3s ease;
+                        }
+
+                        .timeline-item:hover {
+                            transform: translateX(10px);
+                            background: rgba(140, 29, 64, 0.05);
+                            border-radius: 5px;
+                        }
+
+                        .timeline-item:before {
+                            content: '';
+                            position: absolute;
+                            left: -8px;
+                            top: 20px;
+                            width: 13px;
+                            height: 13px;
+                            background: var(--primary);
+                            border-radius: 50%;
+                        }
+
+                        .timeline-content h5 {
+                            color: var(--text);
+                            font-size: 1.1rem;
+                            margin-bottom: 5px;
+                        }
+
+                        .timeline-content .institution {
+                            color: var(--accent);
+                            font-size: 0.9rem;
+                            margin-bottom: 3px;
+                        }
+
+                        .timeline-content .year {
+                            color: var(--text-light);
+                            font-size: 0.85rem;
+                            font-style: italic;
+                        }
+                    </style>
                 </div>
             </div>
         </div>
